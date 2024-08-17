@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgc5ysi0tldh"]
+
+[ext_resource type="Texture2D" uid="uid://tufx12vktwue" path="res://assets/testStage2.png" id="1_bpbtm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4paya"]
+rough = true
+bounce = 0.3
+absorbent = true
+
+[node name="testLevel" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_bpbtm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+physics_material_override = SubResource("PhysicsMaterial_4paya")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+polygon = PackedVector2Array(920, -432, 571, -256, 678, -208, 682, -40, 430, 79, 495, 256, 146, 281, 668, 479, 462, 671, 749, 953, 595, 1136, 422, 1158, 278, 956, 255, 1139, -179, 1139, -514, 984, -269, 731, -484, 791, -451, 704, -613, 610, -708, 405, -625, 228, -707, 102, -645, -67, -549, -126, -521, -50, -476, -177, -324, -277, -171, -3, 6, -315, 141, -356, 214, -283, 238, -457, 157, -572, -150, -762, -569, -814, -893, -700, -891, 1343, 1017, 1300)

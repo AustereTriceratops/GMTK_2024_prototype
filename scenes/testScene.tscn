@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp3jb8kxe0hws"]
+
+[ext_resource type="Script" path="res://scripts/testScene.gd" id="1_sk0k3"]
+[ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_hyhj7"]
+[ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="3_21kqt"]
+[ext_resource type="PackedScene" uid="uid://bgc5ysi0tldh" path="res://scenes/testLevel.tscn" id="3_b0eut"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_sk0k3")
+
+[node name="testLevel" parent="." instance=ExtResource("3_b0eut")]
+
+[node name="playerScene" parent="." instance=ExtResource("2_hyhj7")]
+position = Vector2(2.08165e-12, 800)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-106, 552)
+
+[node name="coin2" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(242, 657)
+
+[node name="coin7" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(365, 910)
+
+[node name="coin3" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-491, 328)
+
+[node name="coin4" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-368, -165)
+
+[node name="coin5" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-63, -96)
+
+[node name="coin6" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(557, 492)
+
+[node name="UILayer" type="CanvasLayer" parent="."]

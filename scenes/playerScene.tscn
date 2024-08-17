@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://capohcmau3xpv"]
+
+[ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_m4bs3"]
+[ext_resource type="Texture2D" uid="uid://dgne28ufylok1" path="res://assets/testPlayer.png" id="2_dndx7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5uxg"]
+radius = 7.5
+height = 225.0
+
+[node name="PlayerScene" type="Node2D"]
+
+[node name="Player" type="RigidBody2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+max_contacts_reported = 2
+contact_monitor = true
+script = ExtResource("1_m4bs3")
+
+[node name="Collider" type="CollisionShape2D" parent="Player"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_d5uxg")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+scale = Vector2(1.5, 0.3)
+texture = ExtResource("2_dndx7")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(2.08165e-12, 2.08165e-12)
+zoom = Vector2(1.5, 1.5)
