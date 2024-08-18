@@ -4,7 +4,7 @@ var colliderHeight = 230
 
 func increment_score():
 	$playerScene/Player/Collider.shape.height += 30;
-	$playerScene/Player.config['jumpImpulse'] += 50;
+	$playerScene/Player.config['jumpImpulse'] += 25;
 	$playerScene/Player/Camera.zoom *= 0.95;
 	
 	var scale = $playerScene/Player/Sprite.scale;
