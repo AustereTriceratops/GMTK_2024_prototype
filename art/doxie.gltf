@@ -8,10 +8,11 @@
 		{
 			"extras":{
 				"GodotPipelineProps":{
-					"export_UI":1,
 					"collision_UI":1,
-					"save_path":"//domino.gltf",
-					"counter":2
+					"col_types":1,
+					"export_UI":1,
+					"save_path":"C:\\Users\\prall\\Documents\\GMTK_2024_prototype\\art\\doxie.gltf",
+					"counter":1
 				}
 			},
 			"name":"Scene",
@@ -23,30 +24,29 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Cube",
+			"name":"Cylinder",
 			"scale":[
-				0.00845209788531065,
-				0.00845209788531065,
-				0.00845209788531065
+				0.03475552797317505,
+				0.03475552797317505,
+				0.03475552797317505
 			]
 		}
 	],
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Material",
+			"name":"Doxie",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
 				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"metallicFactor":0
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Cube",
+			"name":"Cylinder.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -69,69 +69,69 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"domino",
-			"uri":"domino.png"
+			"name":"doxie",
+			"uri":"doxie.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":24,
+			"count":66,
 			"max":[
-				0.19592326879501343,
 				1,
-				1.8478031158447266
+				1,
+				1
 			],
 			"min":[
-				-0.19592326879501343,
 				-1,
-				-1.8478031158447266
+				-1,
+				-1
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":24,
+			"count":66,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":24,
+			"count":66,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":36,
+			"count":180,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":288,
+			"byteLength":792,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":288,
-			"byteOffset":288,
+			"byteLength":792,
+			"byteOffset":792,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":192,
-			"byteOffset":576,
+			"byteLength":528,
+			"byteOffset":1584,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":72,
-			"byteOffset":768,
+			"byteLength":360,
+			"byteOffset":2112,
 			"target":34963
 		}
 	],
@@ -143,8 +143,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":840,
-			"uri":"domino.bin"
+			"byteLength":2472,
+			"uri":"doxie.bin"
 		}
 	]
 }

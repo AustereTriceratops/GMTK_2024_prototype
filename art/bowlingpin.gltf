@@ -12,7 +12,7 @@
 					"save_path":"//bowlingpin.gltf",
 					"collision_UI":1,
 					"col_types":1,
-					"counter":13
+					"counter":14
 				}
 			},
 			"name":"Scene",
@@ -24,7 +24,12 @@
 	"nodes":[
 		{
 			"mesh":0,
-			"name":"Circle"
+			"name":"Circle",
+			"scale":[
+				0.01124865934252739,
+				0.01124865934252739,
+				0.01124865934252739
+			]
 		}
 	],
 	"materials":[
