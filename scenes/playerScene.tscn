@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://capohcmau3xpv"]
 
+[ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_m4bs3"]
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="2_epny7"]
-[ext_resource type="Script" path="res://scripts/PlayerController2.gd" id="2_jkjcf"]
 [ext_resource type="Script" path="res://scripts/GroundDetect.gd" id="3_t151e"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p3y87"]
@@ -38,7 +38,7 @@ axis_lock_angular_y = true
 physics_material_override = SubResource("PhysicsMaterial_r5w80")
 contact_monitor = true
 max_contacts_reported = 2
-script = ExtResource("2_jkjcf")
+script = ExtResource("1_m4bs3")
 
 [node name="Collider" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
