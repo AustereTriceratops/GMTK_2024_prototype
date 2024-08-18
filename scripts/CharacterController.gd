@@ -1,51 +1,71 @@
-extends RigidBody3D;
-
-@onready var mainNode = get_node('/root/main');
+extends RigidBody3D
 
 var config = {
-	'jumpImpulse': 10,
-	'doubleJumpImpulse': 10,
-	'angularVelocity': 3.0,
+	'jumpImpulse':30,
+	'doubleJumpImpulse': 15,
+	'angularVelocity': 8.0,
+	'gravity': 0.2,
 }
 
-var legalInput = {
-	'jump': true,
-	'doubleJump': false,
-}
+var jump_vel = 5
+var acceleration = 5.0
+var accel_multiplier = 1.0
+var speed = 15
+var max_speed = 25
+var move_input = Vector2.ZERO
+var is_on_floor = true
+var sense = 9.0
+var stop_speed = 0.1
 
-var pendingInput = {
-	'jump': false,
-	'doubleJump': false,
-}
+var velocity = Vector3()
 
-func _integrate_forces(state):
-	if pendingInput['jump']:
-		pendingInput['jump'] = false;
-		
-		var collisionPos = state.get_contact_local_position(0);
-		var diff = position - collisionPos;
-		diff.z = 0;
-		var launchDir = -diff.normalized();
-		apply_central_impulse(config['jumpImpulse']*launchDir);
-		
-	if pendingInput['doubleJump']:
-		pendingInput['doubleJump'] = false;
-		
-		apply_central_impulse(config['doubleJumpImpulse']*Vector3(0, -1, 0));
+@onready var feet : Node = $"../GroundDetectionRaycast3D"
 
-func _process(delta):
-	var nContacts = get_contact_count();
-	
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	linear_damp = 1.0
+
+func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed('a'):
 		set_angular_velocity(config['angularVelocity'] * Vector3(0, 0, 1));
 	if Input.is_action_pressed('d'):
 		set_angular_velocity(-config['angularVelocity'] * Vector3(0, 0, 1));
+
+	if gravity_scale >= 0: gravity_scale = 0
+	is_on_floor = false
 	
-	if Input.is_action_just_pressed('jump'):
-		print(nContacts)
-		if nContacts == 1 || nContacts == 2:
-			pendingInput['jump'] = true;
-			legalInput['doubleJump'] = true;
-		elif nContacts == 0 && legalInput['doubleJump']:
-			pendingInput['doubleJump'] = true;
-			legalInput['doubleJump'] = false;
+	if feet.is_colliding():
+		# linear movement allowed if on ground
+		move_input = Vector2.ZERO
+		var dir = Vector3()
+		move_input = Input.get_vector("a","d", "s", "w")
+		dir += move_input.x*feet.global_transform.basis.x;
+		dir -= move_input.y*feet.global_transform.basis.z;
+		velocity = lerp(velocity, dir*max_speed, acceleration * accel_multiplier * delta)
+		apply_central_force(velocity)
+		# note that we're on floor
+		is_on_floor = true
+		gravity_scale = 1.0
+		accel_multiplier = 1.0
+		print("on floor")
+	if Input.is_action_just_pressed("jump") and is_on_floor:
+		accel_multiplier = 0.1
+		is_on_floor = false
+		apply_central_impulse(Vector3.UP * jump_vel)
+	elif !feet.is_colliding():
+		print("not touching")
+		is_on_floor = false
+		gravity_scale = 1.0;
+
+func _integrate_forces(state):
+	#limit max speed
+	if state.linear_velocity.length()>max_speed:
+		state.linear_velocity=state.linear_velocity.normalized()*max_speed
+	#artificial stopping movement i.e not using physics
+	if move_input.length() < 0.2:
+		state.linear_velocity.x = clamp(state.linear_velocity.x,0,stop_speed)
+		state.linear_velocity.z = clamp(state.linear_velocity.z,0,stop_speed)
+	#push against floor to avoid sliding on "unreasonable" slopes
+	if state.get_contact_count() > 0 and move_input.length()< 0.2:
+		if is_on_floor and state.get_contact_local_normal(0).y < 0.9:
+			apply_central_force(-state.get_contact_local_normal(0)*10)

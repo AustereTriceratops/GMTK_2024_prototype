@@ -26,7 +26,7 @@ skeleton = NodePath("")
 [node name="testlevel0" parent="level-mesh" instance=ExtResource("1_wd5ro")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="level-mesh"]
+[node name="StaticBody3D" type="StaticBody3D" parent="level-mesh" groups=["level"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level-mesh/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mcbea")
