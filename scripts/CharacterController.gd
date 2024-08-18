@@ -5,7 +5,7 @@ extends RigidBody3D;
 var config = {
 	'jumpImpulse': 1000,
 	'doubleJumpImpulse': 500,
-	'angularVelocity': 3.0,
+	'angularVelocity': 8.0,
 }
 
 var legalInput = {

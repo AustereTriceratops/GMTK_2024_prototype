@@ -25,7 +25,7 @@ shape = SubResource("BoxShape3D_oxlyj")
 mesh = SubResource("BoxMesh_4yskk")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 h_offset = 0.01
 v_offset = 0.71
 script = ExtResource("2_epny7")

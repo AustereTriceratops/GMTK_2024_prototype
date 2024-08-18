@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://divpm26nay6ih"
+path="res://.godot/imported/cc-3dtestlevel.obj-e64979567f42e1c49206fee34bf10684.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cc-3dtestlevel.obj-e64979567f42e1c49206fee34bf10684.mesh"]
+
+source_file="res://scenes/cc-3dtestlevel.obj"
+dest_files=["res://.godot/imported/cc-3dtestlevel.obj-e64979567f42e1c49206fee34bf10684.mesh", "res://.godot/imported/cc-3dtestlevel.obj-e64979567f42e1c49206fee34bf10684.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
