@@ -4,9 +4,8 @@ extends Node
 @onready var menu_scene = $CanvasLayer
 
 func on_level_select_idx_pressed(level_idx:int):
-	print("Change to level %s" % level_idx)
+	#print("Pushed button to change to level %s" % level_idx)
 	# Remove the current level
-	#get_child(0).visible = false
 	_on_toggle_main_menu_button_pressed() 
 	
 	for child in get_children():
@@ -19,12 +18,12 @@ func on_level_select_idx_pressed(level_idx:int):
 			next_level_resource = preload("res://scenes/level0.tscn").instantiate()
 		1:
 			next_level_resource = preload("res://scenes/artonlylevel.tscn").instantiate()
-		1:
+		2:
 			next_level_resource = preload("res://scenes/3dtestscene.tscn").instantiate()
 		_:
+			push_warning("No scene is assigned for this level select button")
 			return
-	add_child(next_level_resource) #get_tree().get_root().
-
+	add_child(next_level_resource) 
 
 func _on_toggle_main_menu_button_pressed() -> void:
 	showhide_menu.visible = !showhide_menu.visible
