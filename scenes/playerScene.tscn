@@ -1,28 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://capohcmau3xpv"]
+[gd_scene load_steps=8 format=3 uid="uid://capohcmau3xpv"]
 
 [ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_m4bs3"]
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="2_epny7"]
+[ext_resource type="Script" path="res://scripts/GroundDetect.gd" id="3_t151e"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oxlyj"]
-size = Vector3(0.2, 1, 0.1)
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p3y87"]
+radius = 0.1
+height = 1.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r5w80"]
+friction = 0.0
+bounce = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uhbae"]
+radius = 0.1
+height = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_4yskk"]
 size = Vector3(0.2, 1, 0.1)
 
 [node name="PlayerScene" type="Node3D"]
 
+[node name="GroundDetectionRaycast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
+collide_with_areas = true
+script = ExtResource("3_t151e")
+
+[node name="DEBUG_Mesh" type="MeshInstance3D" parent="GroundDetectionRaycast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.451461, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_p3y87")
+
 [node name="Player" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
-axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
+physics_material_override = SubResource("PhysicsMaterial_r5w80")
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_m4bs3")
 
 [node name="Collider" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
-shape = SubResource("BoxShape3D_oxlyj")
+shape = SubResource("CapsuleShape3D_uhbae")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("BoxMesh_4yskk")
