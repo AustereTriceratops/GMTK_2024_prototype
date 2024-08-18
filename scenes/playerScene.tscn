@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://capohcmau3xpv"]
+[gd_scene load_steps=5 format=3 uid="uid://capohcmau3xpv"]
 
 [ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_m4bs3"]
+[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_epny7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxlyj"]
 size = Vector3(0.2, 1, 0.1)
@@ -23,5 +24,8 @@ shape = SubResource("BoxShape3D_oxlyj")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("BoxMesh_4yskk")
 
-[node name="Camera3D" type="Camera3D" parent="Player"]
+[node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 3)
+h_offset = 0.01
+v_offset = 0.71
+script = ExtResource("2_epny7")
