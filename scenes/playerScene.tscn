@@ -34,7 +34,8 @@ mesh = SubResource("CapsuleMesh_p3y87")
 
 [node name="Player" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
-collision_mask = 6
+collision_layer = 3
+collision_mask = 7
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
