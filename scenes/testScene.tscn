@@ -1,17 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp3jb8kxe0hws"]
+[gd_scene load_steps=13 format=3 uid="uid://dp3jb8kxe0hws"]
 
 [ext_resource type="Script" path="res://scripts/testScene.gd" id="1_sk0k3"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_hyhj7"]
 [ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="3_21kqt"]
 [ext_resource type="PackedScene" uid="uid://bgc5ysi0tldh" path="res://scenes/testLevel.tscn" id="3_b0eut"]
+[ext_resource type="PackedScene" uid="uid://dpudij0gl1mx0" path="res://assets/levelgeometry.blend" id="5_elxh5"]
+[ext_resource type="PackedScene" uid="uid://b35qos85r8lh5" path="res://assets/backgroundgeometry.blend" id="6_uyy1a"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u38xq"]
+viewport_path = NodePath("BackgroundViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ovny4"]
+viewport_path = NodePath("ForegroundViewport")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1ja0s"]
+
+[sub_resource type="Sky" id="Sky_4moqp"]
+sky_material = SubResource("PanoramaSkyMaterial_1ja0s")
+
+[sub_resource type="Environment" id="Environment_4j7aj"]
+background_mode = 2
+sky = SubResource("Sky_4moqp")
+
+[sub_resource type="World3D" id="World3D_apcmx"]
+environment = SubResource("Environment_4j7aj")
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_sk0k3")
 
-[node name="testLevel" parent="." instance=ExtResource("3_b0eut")]
+[node name="BackgroundImage" type="Sprite2D" parent="."]
+position = Vector2(103, 69)
+scale = Vector2(3.94336, 3.94336)
+texture = SubResource("ViewportTexture_u38xq")
+
+[node name="ForegroundImage" type="Sprite2D" parent="."]
+position = Vector2(103, 69)
+scale = Vector2(3.94336, 3.94336)
+texture = SubResource("ViewportTexture_ovny4")
 
 [node name="playerScene" parent="." instance=ExtResource("2_hyhj7")]
-position = Vector2(2.08165e-12, 800)
+position = Vector2(59, -26)
+
+[node name="testLevel" parent="." instance=ExtResource("3_b0eut")]
+position = Vector2(59, -26)
 
 [node name="Coins" type="Node" parent="."]
 
@@ -37,3 +68,32 @@ position = Vector2(-63, -96)
 position = Vector2(557, 492)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="ForegroundViewport" type="SubViewport" parent="."]
+own_world_3d = true
+transparent_bg = true
+render_target_update_mode = 4
+
+[node name="levelgeometry2" parent="ForegroundViewport" instance=ExtResource("5_elxh5")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ForegroundViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.16062, 0, 0)
+omni_range = 242.515
+
+[node name="Camera3D" type="Camera3D" parent="ForegroundViewport"]
+transform = Transform3D(2.73106e-06, -5.22393e-06, -1, 1.64204e-05, 1, -5.22389e-06, 1, -1.64204e-05, 2.73115e-06, -7.08771, 2.12854, 0)
+projection = 1
+size = 16.9527
+
+[node name="BackgroundViewport" type="SubViewport" parent="."]
+own_world_3d = true
+world_3d = SubResource("World3D_apcmx")
+
+[node name="backgroundgeometry" parent="BackgroundViewport" instance=ExtResource("6_uyy1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7238, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="BackgroundViewport"]
+transform = Transform3D(2.73106e-06, -5.22393e-06, -1, 1.64204e-05, 1, -5.22389e-06, 1, -1.64204e-05, 2.73115e-06, -11.7857, 2.12854, 0)
+cull_mask = 1047553
+fov = 56.6053
+size = 16.9527

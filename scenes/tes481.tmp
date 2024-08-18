@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp3jb8kxe0hws"]
+
+[ext_resource type="Script" path="res://scripts/testScene.gd" id="1_sk0k3"]
+[ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_hyhj7"]
+[ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="3_21kqt"]
+[ext_resource type="PackedScene" uid="uid://bgc5ysi0tldh" path="res://scenes/testLevel.tscn" id="3_b0eut"]
+[ext_resource type="PackedScene" uid="uid://bmsgfctqenatc" path="res://assets/levelgeometry.gltf" id="5_18r8g"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ovny4"]
+viewport_path = NodePath("SubViewport")
+
+[node name="main2" type="Node2D"]
+script = ExtResource("1_sk0k3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(103, 69)
+scale = Vector2(3.94336, 3.94336)
+texture = SubResource("ViewportTexture_ovny4")
+
+[node name="testLevel" parent="." instance=ExtResource("3_b0eut")]
+position = Vector2(59, -26)
+
+[node name="playerScene" parent="testLevel" instance=ExtResource("2_hyhj7")]
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-106, 552)
+
+[node name="coin2" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(242, 657)
+
+[node name="coin7" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(365, 910)
+
+[node name="coin3" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-491, 328)
+
+[node name="coin4" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-368, -165)
+
+[node name="coin5" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(-63, -96)
+
+[node name="coin6" parent="Coins" instance=ExtResource("3_21kqt")]
+position = Vector2(557, 492)
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="levelgeometry" parent="SubViewport" instance=ExtResource("5_18r8g")]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(2.73106e-06, -5.22393e-06, -1, 1.64204e-05, 1, -5.22388e-06, 1, -1.64204e-05, 2.73114e-06, -7.08771, 2.12854, 0)
+projection = 1
+size = 16.9527
