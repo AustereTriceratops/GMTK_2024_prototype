@@ -9,4 +9,4 @@ rough = true
 physics_material_override = SubResource("PhysicsMaterial_01mga")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(950, 269, 817, 6, 618, -145, 219, -286, 45, -229, 315, 22, 187, 229, -19, 161, -128, 46, -364, -35, -480, 31, -842, 18, -538, 335, -295, 454, 681, 475)
+polygon = PackedVector2Array(950, 269, 817, 6, 618, -145, 219, -286, 54, -229, 315, 22, 187, 229, -19, 161, -128, 46, -364, -35, -480, 31, -842, 18, -538, 335, -295, 454, 681, 475)

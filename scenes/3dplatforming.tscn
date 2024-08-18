@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2oskrdjgfq8n"]
+
+[ext_resource type="PackedScene" uid="uid://dpudij0gl1mx0" path="res://assets/levelgeometry.blend" id="1_75esu"]
+[ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_mnwhe"]
+[ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="3_lwmxd"]
+[ext_resource type="PackedScene" uid="uid://bgc5ysi0tldh" path="res://scenes/testLevel.tscn" id="4_8wjqv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u2kbp"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ukws"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_u2kbp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lg5v8"]
+material = SubResource("StandardMaterial3D_3ukws")
+size = Vector2(20, 20)
+
+[node name="3Dplatforming" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.19123, 4.69834, -2.17531)
+light_energy = 2.898
+light_indirect_energy = 5.203
+light_specular = 0.395
+omni_range = 9.65481
+
+[node name="levelgeometry" parent="." instance=ExtResource("1_75esu")]
+transform = Transform3D(1, 0, 0, 0, 1.12764, 0, 0, 0, 1.03871, 0, 2.57578, -2.17531)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.56094, 1.84158, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.37114e-08, -1, -4.65882e-22, 4.37114e-08, 1.91068e-15, -1, 1, 4.37114e-08, 4.37114e-08, -0.17824, 0.0347853, 0.202328)
+mesh = SubResource("PlaneMesh_lg5v8")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(2000, 2000)
+
+[node name="PlayerScene" parent="SubViewport" instance=ExtResource("2_mnwhe")]
+position = Vector2(822, 434)
+
+[node name="coin" parent="SubViewport" instance=ExtResource("3_lwmxd")]
+position = Vector2(514, 351)
+
+[node name="testLevel" parent="SubViewport" instance=ExtResource("4_8wjqv")]
+position = Vector2(695, 386)
+
+[node name="coin2" parent="SubViewport" instance=ExtResource("3_lwmxd")]
+position = Vector2(812, 308)
+
+[node name="coin3" parent="SubViewport" instance=ExtResource("3_lwmxd")]
+position = Vector2(665, 331)
