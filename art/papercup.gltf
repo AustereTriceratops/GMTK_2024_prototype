@@ -9,11 +9,10 @@
 			"extras":{
 				"GodotPipelineProps":{
 					"collision_UI":1,
-					"col_types":2,
+					"col_types":1,
 					"export_UI":1,
-					"save_path":"C:\\Users\\prall\\Documents\\GMTK_2024_prototype\\art\\americaball.gltf",
-					"counter":13,
-					"body_types":0
+					"save_path":"C:\\Users\\prall\\Documents\\GMTK_2024_prototype\\art\\papercup.gltf",
+					"counter":5
 				}
 			},
 			"name":"Scene",
@@ -25,29 +24,34 @@
 	"nodes":[
 		{
 			"extras":{
-				"collision":"sphere",
-				"radius":"0.1236"
+				"collision":"cylinder",
+				"height":"0.1186",
+				"radius":"0.0348"
 			},
 			"mesh":0,
-			"name":"Sphere"
+			"name":"Cylinder",
+			"translation":[
+				0,
+				0.02452268823981285,
+				0
+			]
 		}
 	],
 	"materials":[
 		{
 			"doubleSided":true,
-			"name":"Baseball",
+			"name":"Doxie",
 			"pbrMetallicRoughness":{
 				"baseColorTexture":{
 					"index":0
 				},
-				"metallicFactor":0,
-				"roughnessFactor":0.5
+				"metallicFactor":0
 			}
 		}
 	],
 	"meshes":[
 		{
-			"name":"Sphere",
+			"name":"Cylinder.001",
 			"primitives":[
 				{
 					"attributes":{
@@ -70,69 +74,69 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"americaball",
-			"uri":"americaball.png"
+			"name":"papercup",
+			"uri":"papercup.png"
 		}
 	],
 	"accessors":[
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":559,
+			"count":66,
 			"max":[
-				0.12359550595283508,
-				0.12359558790922165,
-				0.12359555065631866
+				0.03475552797317505,
+				0.0592782162129879,
+				0.03475552797317505
 			],
 			"min":[
-				-0.12359550595283508,
-				-0.12359558790922165,
-				-0.12359555065631866
+				-0.03475552797317505,
+				-0.0592782162129879,
+				-0.03475552797317505
 			],
 			"type":"VEC3"
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":559,
+			"count":66,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":559,
+			"count":66,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":2880,
+			"count":180,
 			"type":"SCALAR"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":6708,
+			"byteLength":792,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":6708,
-			"byteOffset":6708,
+			"byteLength":792,
+			"byteOffset":792,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":4472,
-			"byteOffset":13416,
+			"byteLength":528,
+			"byteOffset":1584,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":5760,
-			"byteOffset":17888,
+			"byteLength":360,
+			"byteOffset":2112,
 			"target":34963
 		}
 	],
@@ -144,8 +148,8 @@
 	],
 	"buffers":[
 		{
-			"byteLength":23648,
-			"uri":"americaball.bin"
+			"byteLength":2472,
+			"uri":"papercup.bin"
 		}
 	]
 }
