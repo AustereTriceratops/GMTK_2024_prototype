@@ -11,7 +11,7 @@ script = ExtResource("1_sk0k3")
 [node name="testLevel" parent="." instance=ExtResource("3_b0eut")]
 
 [node name="playerScene" parent="." instance=ExtResource("2_hyhj7")]
-position = Vector2(2.08165e-12, 800)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 800, 0)
 
 [node name="Coins" type="Node" parent="."]
 
