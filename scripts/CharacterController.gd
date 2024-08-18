@@ -25,6 +25,13 @@ func _integrate_forces(state):
 		apply_central_force(fac*Vector3(-0.707, -0.707, 0));
 	if Input.is_action_pressed('s'):
 		apply_central_force(10*Vector3(0, 1, 0));
+	if Input.is_action_pressed('a'):
+		#set_angular_velocity(-config['angularVelocity'] * Vector3(0, 0, 1));
+		apply_torque(Vector3(0, -100, 0))
+	if Input.is_action_pressed('d'):
+		#set_angular_velocity(config['angularVelocity'] * Vector3(0, 0, 1));
+		apply_torque(Vector3(0, 100, 0))
+	
 	if pendingInput['jump']:
 		pendingInput['jump'] = false;
 		
@@ -42,11 +49,6 @@ func _integrate_forces(state):
 func _process(delta):
 	var nContacts = get_contact_count();
 	
-	if Input.is_action_pressed('a'):
-		print('a')
-		set_angular_velocity(-config['angularVelocity'] * Vector3(0, 0, 1));
-	if Input.is_action_pressed('d'):
-		set_angular_velocity(config['angularVelocity'] * Vector3(0, 0, 1));
 	if Input.is_action_just_pressed('jump'):
 		if nContacts == 1:
 			pendingInput['jump'] = true;
