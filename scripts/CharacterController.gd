@@ -3,8 +3,8 @@ extends RigidBody3D;
 @onready var mainNode = get_node('/root/main');
 
 var config = {
-	'jumpImpulse': 1000,
-	'doubleJumpImpulse': 500,
+	'jumpImpulse': 10,
+	'doubleJumpImpulse': 10,
 	'angularVelocity': 8.0,
 }
 
@@ -19,14 +19,6 @@ var pendingInput = {
 }
 
 func _integrate_forces(state):
-#	if Input.is_action_pressed('w'):
-#		var v = linear_velocity.length();
-#		var fac = 0.03*clamp(700 - v, 0, 700);
-#		apply_central_force(fac*Vector3(-0.707, -0.707, 0));
-#	if Input.is_action_pressed('s'):
-#		apply_central_force(10*Vector3(0, 1, 0));
-	
-	
 	if pendingInput['jump']:
 		pendingInput['jump'] = false;
 		
@@ -50,7 +42,8 @@ func _process(delta):
 		set_angular_velocity(-config['angularVelocity'] * Vector3(0, 0, 1));
 	
 	if Input.is_action_just_pressed('jump'):
-		if nContacts == 1:
+		print(nContacts)
+		if nContacts == 1 || nContacts == 2:
 			pendingInput['jump'] = true;
 			legalInput['doubleJump'] = true;
 		elif nContacts == 0 && legalInput['doubleJump']:
