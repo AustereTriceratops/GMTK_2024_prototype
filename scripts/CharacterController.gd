@@ -3,7 +3,7 @@ extends RigidBody3D
 var config = {
 	'jumpImpulse':30,
 	'doubleJumpImpulse': 15,
-	'angularVelocity': 4.0,
+	'angularVelocity': 8.0,
 	'gravity': 0.2,
 }
 
