@@ -1,9 +1,8 @@
 extends Node3D
 
-#func increment_score():
-#	$playerScene/Player/Collider.shape.height += 30;
-#	$playerScene/Player.config['jumpImpulse'] += 25;
-#	$playerScene/Player/Camera.zoom *= 0.95;
-#
-#	var scale = $playerScene/Player/Sprite.scale;
-#	$playerScene/Player/Sprite.set_scale(scale + Vector2(0.2, 0));
+func increment_score():
+	$PlayerScene/Player/Collider.shape.height += 0.1;
+	$PlayerScene/Player.config['jumpImpulse'] += 1;
+
+	var scale = $PlayerScene/Player/Mesh.scale;
+	$PlayerScene/Player/Mesh.set_scale(scale + Vector3(0.1, 0, 0));
