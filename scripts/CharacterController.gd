@@ -5,7 +5,7 @@ extends RigidBody3D;
 var config = {
 	'jumpImpulse': 10,
 	'doubleJumpImpulse': 10,
-	'angularVelocity': 8.0,
+	'angularVelocity': 3.0,
 }
 
 var legalInput = {
@@ -25,7 +25,7 @@ func _integrate_forces(state):
 		var collisionPos = state.get_contact_local_position(0);
 		var diff = position - collisionPos;
 		diff.z = 0;
-		var launchDir = diff.normalized();
+		var launchDir = -diff.normalized();
 		apply_central_impulse(config['jumpImpulse']*launchDir);
 		
 	if pendingInput['doubleJump']:
