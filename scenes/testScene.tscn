@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp3jb8kxe0hws"]
+[gd_scene load_steps=9 format=3 uid="uid://dp3jb8kxe0hws"]
 
 [ext_resource type="Script" path="res://scripts/testScene.gd" id="1_sk0k3"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_hyhj7"]
@@ -12,18 +12,6 @@ viewport_path = NodePath("BackgroundViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ovny4"]
 viewport_path = NodePath("ForegroundViewport")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1ja0s"]
-
-[sub_resource type="Sky" id="Sky_4moqp"]
-sky_material = SubResource("PanoramaSkyMaterial_1ja0s")
-
-[sub_resource type="Environment" id="Environment_4j7aj"]
-background_mode = 2
-sky = SubResource("Sky_4moqp")
-
-[sub_resource type="World3D" id="World3D_apcmx"]
-environment = SubResource("Environment_4j7aj")
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_sk0k3")
@@ -42,12 +30,12 @@ texture = SubResource("ViewportTexture_ovny4")
 position = Vector2(59, -26)
 
 [node name="testLevel" parent="." instance=ExtResource("3_b0eut")]
-position = Vector2(59, -26)
+position = Vector2(41, -27)
 
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("3_21kqt")]
-position = Vector2(-106, 552)
+position = Vector2(-318, -512)
 
 [node name="coin2" parent="Coins" instance=ExtResource("3_21kqt")]
 position = Vector2(242, 657)
@@ -65,7 +53,7 @@ position = Vector2(-368, -165)
 position = Vector2(-63, -96)
 
 [node name="coin6" parent="Coins" instance=ExtResource("3_21kqt")]
-position = Vector2(557, 492)
+position = Vector2(-132, -360)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -86,8 +74,6 @@ projection = 1
 size = 16.9527
 
 [node name="BackgroundViewport" type="SubViewport" parent="."]
-own_world_3d = true
-world_3d = SubResource("World3D_apcmx")
 
 [node name="backgroundgeometry" parent="BackgroundViewport" instance=ExtResource("6_uyy1a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7238, 0, 0)
