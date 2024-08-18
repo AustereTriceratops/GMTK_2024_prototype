@@ -3,7 +3,7 @@ extends RigidBody3D
 var config = {
 	'jumpImpulse':30,
 	'doubleJumpImpulse': 15,
-	'angularVelocity': 8.0,
+	'angularVelocity': 4.0,
 	'gravity': 0.2,
 }
 
@@ -47,13 +47,11 @@ func _physics_process(delta: float) -> void:
 		is_on_floor = true
 		gravity_scale = 1.0
 		accel_multiplier = 1.0
-		print("on floor")
 	if Input.is_action_just_pressed("jump") and is_on_floor:
 		accel_multiplier = 0.1
 		is_on_floor = false
 		apply_central_impulse(Vector3.UP * jump_vel)
 	elif !feet.is_colliding():
-		print("not touching")
 		is_on_floor = false
 		gravity_scale = 1.0;
 
