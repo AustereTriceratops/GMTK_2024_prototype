@@ -4,8 +4,6 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4paya"]
 rough = true
-bounce = 0.3
-absorbent = true
 
 [node name="testLevel" type="Node2D"]
 

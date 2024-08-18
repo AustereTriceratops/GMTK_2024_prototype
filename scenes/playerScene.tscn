@@ -25,6 +25,6 @@ position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(1.5, 0.3)
 texture = ExtResource("2_dndx7")
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera" type="Camera2D" parent="Player"]
 offset = Vector2(2.08165e-12, 2.08165e-12)
 zoom = Vector2(1.5, 1.5)
