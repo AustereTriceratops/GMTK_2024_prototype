@@ -10,11 +10,6 @@ var current_collider
 func _process(_delta):
 	# track player position without inheriting the rotation
 	global_position = get_node(player_path).global_position
-	
-	#get_node(player_path).on_floor = is_colliding()# and collider.is_in_group("level")
-	#if is_colliding() and Input.is_action_just_pressed("jump"):
-		##get_node(player_path).
-		#print("collide")
 	$DEBUG_Mesh.material_override = color_collide if is_colliding() else color_no_collide
 
 
