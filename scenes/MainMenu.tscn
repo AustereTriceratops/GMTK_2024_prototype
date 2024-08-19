@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://fbhhd35pioar" path="res://theme/MainTheme.tres" id="1_ylit7"]
 [ext_resource type="Texture2D" uid="uid://bmidcid08nwib" path="res://art/ui/menu_panel.png" id="2_s731j"]
 [ext_resource type="Script" path="res://scripts/ui/button_reports_sibling_idx.gd" id="5_m1o63"]
-[ext_resource type="AudioStream" uid="uid://daswrp6mewsxf" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
+[ext_resource type="AudioStream" uid="uid://d2o8f3d8sdevq" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="7_03vpd"]
 
 [node name="MainMenu" type="Node"]
