@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://capohcmau3xpv"]
+[gd_scene load_steps=9 format=3 uid="uid://capohcmau3xpv"]
 
 [ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_m4bs3"]
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="2_epny7"]
+[ext_resource type="Material" uid="uid://4evk6kib5nm2" path="res://shaders/meterstick_material.tres" id="3_sw3b2"]
 [ext_resource type="Script" path="res://scripts/GroundDetect.gd" id="3_t151e"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p3y87"]
@@ -17,6 +18,7 @@ radius = 0.1
 height = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_4yskk"]
+material = ExtResource("3_sw3b2")
 size = Vector3(0.2, 1, 0.1)
 
 [node name="PlayerScene" type="Node3D"]
@@ -35,7 +37,7 @@ mesh = SubResource("CapsuleMesh_p3y87")
 
 [node name="Player" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
-collision_layer = 3
+collision_layer = 7
 collision_mask = 7
 axis_lock_linear_z = true
 axis_lock_angular_x = true
@@ -48,6 +50,14 @@ script = ExtResource("1_m4bs3")
 [node name="Collider" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 0)
 shape = SubResource("CapsuleShape3D_uhbae")
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Collider"]
+transform = Transform3D(0.989661, -0.143423, 0, 0.143423, 0.989661, 0, 0, 0, 1, 0.0945096, -0.621067, 0)
+target_position = Vector3(0, 1.4, 0)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Player/Collider"]
+transform = Transform3D(0.987483, 0.157727, 0, -0.157727, 0.987483, 0, 0, 0, 1, -0.0908966, -0.644523, 0)
+target_position = Vector3(0, 1.4, 0)
 
 [node name="Mesh" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("BoxMesh_4yskk")

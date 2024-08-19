@@ -7,20 +7,27 @@ var is_on_floor = true
 var velocity = Vector3()
 
 @onready var feet : Node = $"../GroundDetectionRaycast3D"
+@onready var feet1 : Node = $Collider/RayCast3D
+@onready var feet2 : Node = $Collider/RayCast3D2
 @onready var collider : CollisionShape3D = $Collider
 @onready var mesh : MeshInstance3D = $Mesh
+@onready var meterstick_mat : ShaderMaterial = \
+	 preload("res://shaders/meterstick_material.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	linear_damp = 1.0
 	Globals.player_update.connect(on_player_update)
+	Globals.set_player(self)
 	
 func on_player_update():
 	set_scale_length(Globals.PLAYER_SCALE_LENGTH)
 	
+	
 func set_scale_length(new_size: float):
 	collider.set_scale(Vector3(1, new_size, 1))
 	mesh.set_scale(Vector3(1, new_size, 1))
+	meterstick_mat.set_shader_parameter("y_scale", new_size)
 	scale_changed.emit(new_size)
 	
 func get_scale_length():
@@ -45,7 +52,9 @@ func _physics_process(delta: float) -> void:
 		Globals.PLAYER_ACCELERATION * Globals.PLAYER_ACCEL_MULTIPLIER * delta)
 	apply_central_force(velocity)
 	
-	if get_contact_count() > 0 and feet.is_colliding():
+	
+	
+	if get_contact_count() > 0 and (feet.is_colliding() or feet1.is_colliding() or feet2.is_colliding()):
 		# linear movement allowed if on ground
 	
 		# note that we're on floor

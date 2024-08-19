@@ -293,22 +293,22 @@ transform = Transform3D(9.13019, -4.07916, 1.78306e-07, 1.38407e-15, -4.37114e-0
 transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, -11.8958, 3.86825, 0.0731837)
 
 [node name="woodenblock15" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(-2.95558, 0, -9.55325, 0, 10, 0, 9.55325, 0, -2.95558, 15.2979, 0.345336, 0.683461)
+transform = Transform3D(-2.95558, 0, -9.55325, 0, 10, 0, 9.55325, 0, -2.95558, 15.2979, 0.345336, 0)
 
 [node name="woodenblock16" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 18.0109, 0.345336, 0.683461)
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 18.0109, 0.345336, 0)
 
 [node name="woodenblock17" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(2.72482, 0, -9.62161, 0, 10, 0, 9.62161, 0, 2.72482, 20.643, 0.345336, 0.683461)
+transform = Transform3D(2.72482, 0, -9.62161, 0, 10, 0, 9.62161, 0, 2.72482, 20.643, 0.345336, 0.289963)
 
 [node name="woodenblock18" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 19.4687, 1.11727, 0.683461)
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 19.4687, 1.11727, 0)
 
 [node name="woodenblock19" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 16.5532, 1.11727, 0.683461)
+transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, 16.5532, 1.11727, 0)
 
 [node name="woodenblock20" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(-3.78132, 0, -9.25752, 0, 10, 0, 9.25752, 0, -3.78132, 18.1324, 1.87025, 0.683461)
+transform = Transform3D(-3.78132, 0, -9.25752, 0, 10, 0, 9.25752, 0, -3.78132, 18.1324, 1.87025, 0)
 
 [node name="woodenblock2" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
 transform = Transform3D(8.69607, 0, 4.93745, 0, 10, 0, -4.93745, 0, 8.69607, 1.00217, 0.395919, 0.683461)
@@ -328,7 +328,7 @@ transform = Transform3D(9.71863, 0, 2.35549, 0, 10, 0, -2.35549, 0, 9.71863, -5.
 [node name="woodenblock21" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
 transform = Transform3D(9.71863, 0, 2.35549, 0, 10, 0, -2.35549, 0, 9.71863, -6.23192, 1.19922, 0.441396)
 
-[node name="Collectables" type="Node" parent="."]
+[node name="Collectables" type="Node3D" parent="."]
 
 [node name="coin" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -11.8877, 5.41329, 0)
@@ -341,6 +341,21 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="coin4" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -3.72829, 0.312065, 0)
+
+[node name="coin8" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -3.12437, 0.312065, 0)
+
+[node name="coin9" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -2.55546, 0.312065, 0)
+
+[node name="coin10" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -2.8618, 0.898478, 0)
+
+[node name="coin11" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -3.46571, 0.898478, 0)
+
+[node name="coin12" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -4.17466, 0.898478, 0)
 
 [node name="coin5" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 11.7993, 0.183839, 0)
