@@ -66,6 +66,10 @@ s={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_3="powerups"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

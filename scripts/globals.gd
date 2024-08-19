@@ -1,5 +1,7 @@
 extends Node
 
+signal player_update(new_length)
+
 @export var PLAYER_SCALE_LENGTH = 1.0
 @export var PLAYER_JUMP_SPEED = 5
 @export var PLAYER_DOUBLEJUMPIMPULSE = 30
@@ -10,3 +12,8 @@ extends Node
 @export var PLAYER_SPEED = 10
 @export var PLAYER_MAX_SPEED = 20
 @export var PLAYER_STOP_SPEED = 0.1
+
+func increment_score():
+	PLAYER_SCALE_LENGTH += 0.1
+	PLAYER_JUMP_SPEED += 1
+	player_update.emit(PLAYER_SCALE_LENGTH)

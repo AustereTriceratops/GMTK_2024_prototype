@@ -13,6 +13,10 @@ var velocity = Vector3()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	linear_damp = 1.0
+	Globals.player_update.connect(on_player_update)
+	
+func on_player_update():
+	set_scale_length(Globals.PLAYER_SCALE_LENGTH)
 	
 func set_scale_length(new_size: float):
 	collider.set_scale(Vector3(1, new_size, 1))
