@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://desvpjl8kieww"]
+
+[ext_resource type="Script" path="res://scripts/testScene.gd" id="1_brmjd"]
+[ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_q4npd"]
+[ext_resource type="PackedScene" uid="uid://cq7dabss50oue" path="res://art/americaball.gltf" id="4_n8ybe"]
+[ext_resource type="PackedScene" uid="uid://mk62bganmgxb" path="res://art/papercup.gltf" id="5_lkpwf"]
+[ext_resource type="PackedScene" uid="uid://r0tblu86crn1" path="res://art/domino.gltf" id="6_0e6id"]
+[ext_resource type="PackedScene" uid="uid://bn77lon0bgyii" path="res://art/bowlingpin.gltf" id="7_rqq8t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ge087"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ylt34"]
+size = Vector3(1, 0.1, 1)
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_brmjd")
+metadata/movie_file = "vids/test3d.avi"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.934931, 2.94417e-08, -0.35483, 0.282632, 0.604599, 0.744701, 0.21453, -0.79653, 0.565258, -1.6416, 10.3642, 9.03418)
+
+[node name="PlayerScene" parent="." instance=ExtResource("2_q4npd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35341, 1.68985, 1.00581)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(14.035, 0, 0, 0, 14.035, 0, 0, 0, 14.035, -0.0135915, -0.273424, 1.17149)
+
+[node name="americaball" parent="Node3D" instance=ExtResource("4_n8ybe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00887221, -0.0868652, -0.000451155)
+
+[node name="papercup" parent="Node3D" instance=ExtResource("5_lkpwf")]
+transform = Transform3D(0.618312, -0.785932, 0, 0.785932, 0.618312, 0, 0, 0, 1, -0.122276, 0, 0)
+
+[node name="papercup2" parent="Node3D" instance=ExtResource("5_lkpwf")]
+transform = Transform3D(0.618312, -0.785932, 0, 0.785932, 0.618312, 0, 0, 0, 1, 0.162599, -0.0246346, 0)
+
+[node name="domino" parent="Node3D" instance=ExtResource("6_0e6id")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1739, 0.0131369, 0)
+
+[node name="bowlingpin" parent="Node3D" instance=ExtResource("7_rqq8t")]
+transform = Transform3D(0.792642, 0.579141, -0.190564, -0.564031, 0.815221, 0.131466, 0.231489, 0.00327849, 0.972832, 0.150572, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_ge087")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+mesh = SubResource("BoxMesh_ylt34")
