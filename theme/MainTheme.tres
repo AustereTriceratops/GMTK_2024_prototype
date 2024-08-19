@@ -1,13 +1,44 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://fbhhd35pioar"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://fbhhd35pioar"]
 
 [ext_resource type="FontFile" uid="uid://b58piq00q6tq1" path="res://theme/klarissa/Klarissa.ttf" id="1_1rs0y"]
+[ext_resource type="Texture2D" uid="uid://caol45opbt73g" path="res://art/a.png" id="1_jvo2l"]
+[ext_resource type="Texture2D" uid="uid://c065ehderl32k" path="res://art/imgs/a.png" id="2_38bho"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rka5"]
 bg_color = Color(0.0627451, 0.262745, 0.458824, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lia6m"]
+bg_color = Color(0.2275, 0.284667, 0.35, 1)
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qpmta"]
+bg_color = Color(0.0627451, 0.262745, 0.458824, 1)
+skew = Vector2(1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_perjy"]
+bg_color = Color(0.503342, 0.721334, 0.966292, 1)
+skew = Vector2(1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugs2t"]
+bg_color = Color(0.988235, 0.968627, 0.541176, 1)
+skew = Vector2(1, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.772049, 0.738493, 0.0493428, 1)
+
 [resource]
 default_font = ExtResource("1_1rs0y")
 default_font_size = 40
+BoxContainer/constants/separation = 50
 Button/styles/normal = SubResource("StyleBoxFlat_1rka5")
+Button/styles/pressed = SubResource("StyleBoxFlat_lia6m")
+HSlider/icons/grabber = ExtResource("1_jvo2l")
+HSlider/icons/grabber_highlight = ExtResource("2_38bho")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_qpmta")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_perjy")
+HSlider/styles/slider = SubResource("StyleBoxFlat_ugs2t")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/font_outline_color = Color(1, 1, 1, 1)
