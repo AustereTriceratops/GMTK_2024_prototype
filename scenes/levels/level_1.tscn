@@ -1,24 +1,53 @@
-[gd_scene load_steps=9 format=3 uid="uid://desvpjl8kieww"]
+[gd_scene load_steps=14 format=3 uid="uid://desvpjl8kieww"]
 
 [ext_resource type="Script" path="res://scripts/testScene.gd" id="1_brmjd"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_q4npd"]
-[ext_resource type="PackedScene" uid="uid://cq7dabss50oue" path="res://art/americaball.gltf" id="4_n8ybe"]
-[ext_resource type="PackedScene" uid="uid://mk62bganmgxb" path="res://art/papercup.gltf" id="5_lkpwf"]
-[ext_resource type="PackedScene" uid="uid://r0tblu86crn1" path="res://art/domino.gltf" id="6_0e6id"]
-[ext_resource type="PackedScene" uid="uid://bn77lon0bgyii" path="res://art/bowlingpin.gltf" id="7_rqq8t"]
+[ext_resource type="PackedScene" uid="uid://d1cwh17asfrtw" path="res://art/woodenblock.gltf" id="3_i8mvx"]
+[ext_resource type="PackedScene" uid="uid://w66c1pc2xw1t" path="res://art/blueblock.gltf" id="4_f20gw"]
+[ext_resource type="PackedScene" uid="uid://b5fi1n5tarbxd" path="res://art/woodenarch.gltf" id="5_h0upn"]
+[ext_resource type="PackedScene" uid="uid://dl04dji00qnht" path="res://art/worldsbestmom.gltf" id="6_uua0s"]
+[ext_resource type="PackedScene" uid="uid://rxhnw21rvlnq" path="res://art/ablock.gltf" id="7_sr01b"]
+[ext_resource type="PackedScene" uid="uid://rvbujebl1p10" path="res://art/baseball.gltf" id="8_2rodg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ge087"]
-size = Vector3(1, 0.1, 1)
+size = Vector3(3, 0.1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ylt34"]
-size = Vector3(1, 0.1, 1)
+size = Vector3(3, 0.1, 1)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2bxpd"]
+rayleigh_coefficient = 1.15
+rayleigh_color = Color(0.186142, 0.407626, 0.686855, 1)
+mie_coefficient = 0.156
+mie_eccentricity = -0.13
+mie_color = Color(0.981643, 0.891046, 0.686745, 1)
+turbidity = 116.9
+ground_color = Color(0.812658, 0.694774, 0.556755, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_v2ijr"]
+sky_material = SubResource("PhysicalSkyMaterial_2bxpd")
+
+[sub_resource type="Environment" id="Environment_brng1"]
+background_mode = 2
+background_color = Color(0.925156, 0.807845, 0.663574, 1)
+background_energy_multiplier = 2.73
+sky = SubResource("Sky_v2ijr")
+ambient_light_source = 2
+ambient_light_color = Color(0.827516, 0.588107, 0.96313, 1)
+ambient_light_energy = 0.27
+tonemap_mode = 3
+tonemap_white = 1.47
+ssao_enabled = true
+ssao_intensity = 1.84
+ssao_detail = 0.35
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_brmjd")
 metadata/movie_file = "vids/test3d.avi"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.934931, 2.94417e-08, -0.35483, 0.282632, 0.604599, 0.744701, 0.21453, -0.79653, 0.565258, -1.6416, 10.3642, 9.03418)
+transform = Transform3D(-0.331131, -0.94234, -0.0484526, 0.649977, -0.265018, 0.712246, -0.684019, 0.204354, 0.700255, -1.85455, 10.3642, 9.66113)
 
 [node name="PlayerScene" parent="." instance=ExtResource("2_q4npd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35341, 1.68985, 1.00581)
@@ -28,21 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35341, 1.68985, 1.00581)
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(14.035, 0, 0, 0, 14.035, 0, 0, 0, 14.035, -0.0135915, -0.273424, 1.17149)
 
-[node name="americaball" parent="Node3D" instance=ExtResource("4_n8ybe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00887221, -0.0868652, -0.000451155)
-
-[node name="papercup" parent="Node3D" instance=ExtResource("5_lkpwf")]
-transform = Transform3D(0.618312, -0.785932, 0, 0.785932, 0.618312, 0, 0, 0, 1, -0.122276, 0, 0)
-
-[node name="papercup2" parent="Node3D" instance=ExtResource("5_lkpwf")]
-transform = Transform3D(0.618312, -0.785932, 0, 0.785932, 0.618312, 0, 0, 0, 1, 0.162599, -0.0246346, 0)
-
-[node name="domino" parent="Node3D" instance=ExtResource("6_0e6id")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1739, 0.0131369, 0)
-
-[node name="bowlingpin" parent="Node3D" instance=ExtResource("7_rqq8t")]
-transform = Transform3D(0.792642, 0.579141, -0.190564, -0.564031, 0.815221, 0.131466, 0.231489, 0.00327849, 0.972832, 0.150572, 0, 0)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 
@@ -51,3 +65,30 @@ shape = SubResource("BoxShape3D_ge087")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
 mesh = SubResource("BoxMesh_ylt34")
+
+[node name="woodenblock" parent="Node3D" instance=ExtResource("3_i8mvx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.100016, -0.0126036, 0)
+
+[node name="woodenblock2" parent="Node3D" instance=ExtResource("3_i8mvx")]
+transform = Transform3D(-0.227994, 0, 0.973663, 0, 1, 0, -0.973663, 0, -0.227994, 0.371538, -0.0126036, -0.00712113)
+
+[node name="woodenblock3" parent="Node3D" instance=ExtResource("3_i8mvx")]
+transform = Transform3D(0.150898, 0, 0.988549, 0, 1, 0, -0.988549, 0, 0.150898, 0.243666, 0.0635838, 0.00764734)
+
+[node name="blueblock" parent="Node3D" instance=ExtResource("4_f20gw")]
+transform = Transform3D(0.604573, 0, 0.523919, 0, 0.8, 0, -0.523919, 0, 0.604573, -0.469995, 0.0839777, -0.119292)
+
+[node name="woodenarch" parent="Node3D" instance=ExtResource("5_h0upn")]
+transform = Transform3D(-0.13461, 0.483469, 0.86495, -0.0633451, 0.86691, -0.494423, -0.988872, -0.121345, -0.0860693, 0.330706, 0.0735618, -0.0247252)
+
+[node name="worldsbestmom" parent="Node3D" instance=ExtResource("6_uua0s")]
+transform = Transform3D(1.08141, 0, -2.79831, 0, 3, 0, 2.79831, 0, 1.08141, -0.094863, -0.0593404, -0.302058)
+
+[node name="ablock" parent="Node3D" instance=ExtResource("7_sr01b")]
+transform = Transform3D(4.19191e-08, 0.958998, 0.283413, 1, -4.37114e-08, 0, 1.23884e-08, 0.283413, -0.958998, -0.2151, -0.0215784, 0.0126202)
+
+[node name="baseball" parent="Node3D" instance=ExtResource("8_2rodg")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.315621, 0.0197574, 0.00349206)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_brng1")
