@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://desvpjl8kieww"]
+[gd_scene load_steps=15 format=3 uid="uid://desvpjl8kieww"]
 
 [ext_resource type="Script" path="res://scripts/testScene.gd" id="1_brmjd"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_q4npd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dl04dji00qnht" path="res://art/worldsbestmom.gltf" id="6_uua0s"]
 [ext_resource type="PackedScene" uid="uid://rxhnw21rvlnq" path="res://art/ablock.gltf" id="7_sr01b"]
 [ext_resource type="PackedScene" uid="uid://rvbujebl1p10" path="res://art/baseball.gltf" id="8_2rodg"]
+[ext_resource type="PackedScene" uid="uid://r0tblu86crn1" path="res://art/domino.gltf" id="9_tbg1k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ge087"]
 size = Vector3(3, 0.1, 1)
@@ -31,13 +32,14 @@ sky_material = SubResource("PhysicalSkyMaterial_2bxpd")
 [sub_resource type="Environment" id="Environment_brng1"]
 background_mode = 2
 background_color = Color(0.925156, 0.807845, 0.663574, 1)
-background_energy_multiplier = 2.73
+background_energy_multiplier = 2.63
 sky = SubResource("Sky_v2ijr")
 ambient_light_source = 2
 ambient_light_color = Color(0.827516, 0.588107, 0.96313, 1)
-ambient_light_energy = 0.27
+ambient_light_energy = 0.11
 tonemap_mode = 3
-tonemap_white = 1.47
+tonemap_exposure = 0.59
+tonemap_white = 0.84
 ssao_enabled = true
 ssao_intensity = 1.84
 ssao_detail = 0.35
@@ -89,6 +91,53 @@ transform = Transform3D(4.19191e-08, 0.958998, 0.283413, 1, -4.37114e-08, 0, 1.2
 
 [node name="baseball" parent="Node3D" instance=ExtResource("8_2rodg")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.315621, 0.0197574, 0.00349206)
+
+[node name="dominos" type="Node" parent="Node3D"]
+
+[node name="domino" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(4.31456, -24.6249, 1.07639e-06, 0, -1.09278e-06, -25, 24.6249, 4.31456, -1.88595e-07, 2.34877, -0.583252, 0)
+
+[node name="domino2" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(0.325494, -24.9979, 1.09269e-06, 1.53284e-14, -1.09278e-06, -25, 24.9979, 0.325494, -1.42278e-08, 2.4867, -0.583252, 0.327094)
+
+[node name="domino3" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(0.325494, -24.9979, 1.09269e-06, 1.53284e-14, -1.09278e-06, -25, 24.9979, 0.325494, -1.42278e-08, 2.4867, -0.583252, 0.729065)
+
+[node name="domino4" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-1.56976, -24.9507, 1.09063e-06, 1.53284e-14, -1.09278e-06, -25, 24.9507, -1.56976, 6.86165e-08, 2.4867, -0.583252, 1.23744)
+
+[node name="domino5" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-4.56447, -24.5798, 1.07442e-06, 1.52916e-14, -1.09278e-06, -25, 24.5798, -4.56447, 1.99519e-07, 2.41183, -0.583252, 1.7734)
+
+[node name="domino6" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-11.0474, -22.4266, 9.80299e-07, 1.52916e-14, -1.09278e-06, -25, 22.4266, -11.0474, 4.82899e-07, 2.19113, -0.583252, 2.18325)
+
+[node name="domino7" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-19.7574, -15.3182, 6.69579e-07, 5.51293e-14, -1.09278e-06, -25, 15.3182, -19.7574, 8.63621e-07, 1.74187, -0.583252, 2.53005)
+
+[node name="domino8" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-24.7271, -3.68401, 1.61033e-07, -3.43879e-14, -1.09278e-06, -25, 3.68401, -24.7271, 1.08085e-06, 1.1665, -0.583252, 2.66404)
+
+[node name="domino9" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-23.5088, 8.50498, -3.71764e-07, -2.34069e-14, -1.09278e-06, -25, -8.50498, -23.5088, 1.0276e-06, 0.67389, -0.583252, 2.53793)
+
+[node name="domino10" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-19.6769, 15.4214, -6.74092e-07, -2.52684e-15, -1.09278e-06, -25, -15.4214, -19.6769, 8.60103e-07, 0.327092, -0.583252, 2.3133)
+
+[node name="domino11" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-24.9974, 0.356472, -1.55819e-08, 5.22611e-14, -1.09278e-06, -25, -0.356472, -24.9974, 1.09267e-06, 0.00787985, -0.583252, 2.15961)
+
+[node name="domino12" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-24.5412, -4.76765, 2.08401e-07, 5.22611e-14, -1.09278e-06, -25, 4.76765, -24.5412, 1.07273e-06, -0.291628, -0.583252, 2.15961)
+
+[node name="domino13" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-21.1864, -13.2716, 5.80122e-07, 1.3526e-14, -1.09278e-06, -25, 13.2716, -21.1864, 9.26086e-07, -0.630544, -0.583252, 2.30542)
+
+[node name="domino14" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-18.3349, -16.995, 7.42874e-07, -2.41085e-14, -1.09278e-06, -25, 16.995, -18.3349, 8.01446e-07, -1.05976, -0.583252, 2.54724)
+
+[node name="domino15" parent="Node3D/dominos" instance=ExtResource("9_tbg1k")]
+transform = Transform3D(-21.7249, -12.3705, 5.40733e-07, 8.46086e-15, -1.09278e-06, -25, 12.3705, -21.7249, 9.49624e-07, -1.51503, -0.583252, 2.86057)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_brng1")
