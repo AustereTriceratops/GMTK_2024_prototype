@@ -31,7 +31,7 @@ shape = SubResource("ConcavePolygonShape3D_mcbea")
 transform = Transform3D(0.934931, 2.94417e-08, -0.35483, 0.282632, 0.604599, 0.744701, 0.21453, -0.79653, 0.565258, -1.6416, 10.3642, 9.03418)
 
 [node name="PlayerScene" parent="." instance=ExtResource("5_46vka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35341, 1.68985, 1.00581)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35341, 3.06963, 1.00581)
 
 [node name="Coins" type="Node" parent="."]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://fbhhd35pioar"]
 
-[ext_resource type="FontFile" uid="uid://bu0gaajr8rjhk" path="res://theme/klarissa/Klarissa.ttf" id="1_1rs0y"]
+[ext_resource type="FontFile" uid="uid://b58piq00q6tq1" path="res://theme/klarissa/Klarissa.ttf" id="1_1rs0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rka5"]
 bg_color = Color(0.0627451, 0.262745, 0.458824, 1)
