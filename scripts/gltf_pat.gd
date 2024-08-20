@@ -41,8 +41,12 @@ func iterate_scene(scene, node):
 	
 	#var body = StaticBody3D.new()
 	#body.name = "StaticBody3D_" + node.name
-
-	mesh_inst.create_convex_collision()
+	
+	if scene.name == "forest_collision":
+		mesh_inst.create_trimesh_collision()
+	else:
+		mesh_inst.create_convex_collision()
+	
 	
 	for staticbody in node.get_children():
 		if staticbody is StaticBody3D:

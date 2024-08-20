@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1xxd1b1h3r0q"
-path.s3tc="res://.godot/imported/wood.png-2021596c979b0d4c0c43310300901564.s3tc.ctex"
+uid="uid://c7kdmx74rh68g"
+path.s3tc="res://.godot/imported/foliage.png-0f0952afffd8add92e2cddf7ca8b0b92.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://art/wood.png"
-dest_files=["res://.godot/imported/wood.png-2021596c979b0d4c0c43310300901564.s3tc.ctex"]
+source_file="res://art/foliage.png"
+dest_files=["res://.godot/imported/foliage.png-0f0952afffd8add92e2cddf7ca8b0b92.s3tc.ctex"]
 
 [params]
 
