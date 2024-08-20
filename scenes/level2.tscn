@@ -1,20 +1,22 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7t6e2mkvex2y"]
+[gd_scene load_steps=23 format=3 uid="uid://b7t6e2mkvex2y"]
 
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="1_vmka4"]
 [ext_resource type="PackedScene" uid="uid://dl04dji00qnht" path="res://art/worldsbestmom.gltf" id="3_dgyml"]
-[ext_resource type="PackedScene" path="res://art/yellowball-bouncy.tscn" id="5_6hsv2"]
+[ext_resource type="PackedScene" uid="uid://crws14mna25fa" path="res://art/yellowball-bouncy.tscn" id="5_6hsv2"]
 [ext_resource type="PackedScene" uid="uid://cf1rhdnpwqart" path="res://art/doxie.gltf" id="6_nc4mf"]
 [ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="7_7i3nd"]
 [ext_resource type="PackedScene" uid="uid://mk62bganmgxb" path="res://art/papercup.gltf" id="7_alv33"]
 [ext_resource type="PackedScene" uid="uid://ckwr8s3qlq7si" path="res://art/forest_art.gltf" id="8_2ixos"]
 [ext_resource type="PackedScene" uid="uid://roy1vavp0yq4" path="res://art/forest_leaves.gltf" id="9_uwq3x"]
-[ext_resource type="PackedScene" uid="uid://brxyoamqb6n0q" path="res://scenes/level_complete_collectable.tscn" id="9_xccln"]
+[ext_resource type="PackedScene" uid="uid://cdiy3enf0hti1" path="res://scenes/level_complete_collectable.tscn" id="9_xccln"]
 [ext_resource type="PackedScene" uid="uid://78bsft32h877" path="res://art/roundbead.gltf" id="10_j7kk5"]
 [ext_resource type="PackedScene" uid="uid://ddi68palk0wee" path="res://art/measuringtape.gltf" id="11_f8af8"]
 [ext_resource type="PackedScene" uid="uid://do5dbcjtlqjva" path="res://art/deckOfCards.gltf" id="12_lpp54"]
 [ext_resource type="PackedScene" uid="uid://c78y6bedxtfci" path="res://art/dice.gltf" id="13_cl07s"]
 [ext_resource type="PackedScene" uid="uid://rcidqi2tuld4" path="res://art/round bead.gltf" id="14_1cflx"]
+[ext_resource type="PackedScene" path="res://scenes/explosion.tscn" id="16_hyrpr"]
 [ext_resource type="PackedScene" uid="uid://cvxfbr1j1m60w" path="res://art/stool.gltf" id="16_ivpty"]
+[ext_resource type="FontFile" uid="uid://hhv5u3cwohgl" path="res://theme/budnull/Budnm___.ttf" id="17_4b0ju"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kk0n"]
 friction = 0.07
@@ -267,3 +269,27 @@ visible = false
 
 [node name="stool" parent="." instance=ExtResource("16_ivpty")]
 transform = Transform3D(3.08131, -0.217426, 3.9317, 1.0352, 4.86149, -0.542447, -3.7992, 1.1483, 3.04097, 55.3955, 8.98146, -0.364383)
+
+[node name="Explosion" parent="." instance=ExtResource("16_hyrpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0298, 71.9276, 0)
+
+[node name="Debris" parent="Explosion" index="0"]
+emitting = true
+one_shot = false
+
+[node name="Smoke" parent="Explosion" index="1"]
+emitting = true
+one_shot = false
+
+[node name="Fire" parent="Explosion" index="2"]
+emitting = true
+one_shot = false
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0551, 71.9795, 0)
+text = "YOU WIN!
+WELCOME TO 2024!"
+font = ExtResource("17_4b0ju")
+font_size = 100
+
+[editable path="Explosion"]
