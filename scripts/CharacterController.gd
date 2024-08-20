@@ -21,6 +21,7 @@ func _ready():
 	linear_damp = 1.0
 	Globals.player_update.connect(on_player_update)
 	Globals.set_player(self)
+	meterstick_mat.set_shader_parameter("y_scale", 1.0)
 	
 func on_player_update():
 	print("on_player_update")
@@ -28,7 +29,13 @@ func on_player_update():
 	
 	
 func set_scale_length(new_size: float):
-	collider.set_scale(Vector3(1, new_size, 1))
+	print(new_size)
+	var box : BoxShape3D = BoxShape3D.new()
+	box.extents.x = 0.165
+	box.extents.y = (new_size/2.0)
+	box.extents.z = 0.183
+	
+	collider.shape = box #;set_scale(Vector3(1, new_size, 1))
 	mesh.set_scale(Vector3(1, new_size, 1))
 	meterstick_mat.set_shader_parameter("y_scale", new_size)
 	scale_changed.emit(new_size)

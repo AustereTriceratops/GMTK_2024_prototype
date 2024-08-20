@@ -236,6 +236,9 @@ transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.821
 [node name="americaball" parent="Obstacles" instance=ExtResource("4_mouu1")]
 transform = Transform3D(0.630093, 0.776519, 0, -0.776519, 0.630093, 0, 0, 0, 1, -0.812883, 0.124988, 0)
 
+[node name="americaball2" parent="Obstacles" instance=ExtResource("4_mouu1")]
+transform = Transform3D(0.630093, 0.776519, 0, -0.776519, 0.630093, 0, 0, 0, 1, -2.71517, 1.4996, 0)
+
 [node name="baseball" parent="Obstacles" instance=ExtResource("5_c4vx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.427988, 0.0344724, 0)
 
@@ -326,6 +329,15 @@ transform = Transform3D(-0.429282, -0.903171, 0, 0.903171, -0.429282, 0, 0, 0, 1
 [node name="bowlingpin4" parent="Obstacles" instance=ExtResource("7_010d4")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.999626, 0.00387394, 0)
 
+[node name="bowlingpin15" parent="Obstacles" instance=ExtResource("7_010d4")]
+transform = Transform3D(-4.2062e-08, -0.962265, 0.272112, 1, -4.37114e-08, 0, 1.18944e-08, 0.272112, 0.962265, 0.999626, 0.00387394, 0.161447)
+
+[node name="bowlingpin17" parent="Obstacles" instance=ExtResource("7_010d4")]
+transform = Transform3D(-2.03621e-08, -0.465831, -0.884874, 1, -4.37114e-08, 0, -3.86791e-08, -0.884874, 0.465831, 0.999626, 0.00387394, -0.203649)
+
+[node name="bowlingpin16" parent="Obstacles" instance=ExtResource("7_010d4")]
+transform = Transform3D(-4.00534e-08, -0.916314, -0.400461, 1, -4.37114e-08, 0, -1.75047e-08, -0.400461, 0.916314, 0.740258, 0.00387394, 0.117291)
+
 [node name="bowlingpin6" parent="Obstacles" instance=ExtResource("7_010d4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56079, 0.00361211, 0)
 
@@ -360,7 +372,13 @@ transform = Transform3D(-4.37042e-08, -0.999835, 0.0181329, 0.97871, -0.00372179
 transform = Transform3D(-0.41539, -0.909639, 0.00267035, 0.909643, -0.415392, 5.55112e-18, 0.00110924, 0.00242906, 0.999996, -0.278132, 0.00368904, 3.92098e-05)
 
 [node name="jack" parent="Obstacles" instance=ExtResource("9_ju2ta")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36508, 0.00988537, 0)
+transform = Transform3D(0.450535, 0, -0.892759, 0, 1, 0, 0.892759, 0, 0.450535, 1.41356, 0.00988537, 0.132663)
+
+[node name="jack2" parent="Obstacles" instance=ExtResource("9_ju2ta")]
+transform = Transform3D(0.450535, 0, -0.892759, 0, 1, 0, 0.892759, 0, 0.450535, 1.39801, 0.00988537, 0.101836)
+
+[node name="jack3" parent="Obstacles" instance=ExtResource("9_ju2ta")]
+transform = Transform3D(0.450535, 0, -0.892759, 0, 1, 0, 0.892759, 0, 0.450535, 1.40311, 0.00988537, 0.178771)
 
 [node name="measuringtape" parent="Obstacles" instance=ExtResource("10_6afpk")]
 transform = Transform3D(-4.37079e-08, 0.0127232, 0.999919, 5.56136e-10, 0.999919, -0.0127232, -1, 4.27e-15, -4.37114e-08, 4.96979, 0.301336, 0)
@@ -413,7 +431,7 @@ transform = Transform3D(9.8948, 1.26472e-07, 1.44667, 0, -10, 8.74228e-07, 1.446
 transform = Transform3D(9.8948, 1.26472e-07, 1.44667, 0, -10, 8.74228e-07, 1.44667, -8.65031e-07, -9.8948, 38.8128, 0.334608, 0)
 
 [node name="doxie11" parent="Obstacles/Dixie Cups" instance=ExtResource("9_0dqex")]
-transform = Transform3D(8.5202, -4.57667e-07, -5.2351, 1.40614e-14, -10, 8.74228e-07, -5.2351, -7.44859e-07, -8.5202, 39.3328, 1.04967, 0)
+transform = Transform3D(2.09806, -9.77743, 0, 9.77743, 2.09806, 0, 0, 0, 10, 37.9506, 0.174999, 0)
 
 [node name="doxie12" parent="Obstacles/Dixie Cups" instance=ExtResource("9_0dqex")]
 transform = Transform3D(9.8948, 1.26472e-07, 1.44667, 0, -10, 8.74228e-07, 1.44667, -8.65031e-07, -9.8948, 49.6038, 0.334608, 0)
