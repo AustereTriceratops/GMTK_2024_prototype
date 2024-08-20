@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7t6e2mkvex2y"]
+[gd_scene load_steps=22 format=3 uid="uid://b7t6e2mkvex2y"]
 
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="1_vmka4"]
 [ext_resource type="PackedScene" uid="uid://dl04dji00qnht" path="res://art/worldsbestmom.gltf" id="3_dgyml"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://do5dbcjtlqjva" path="res://art/deckOfCards.gltf" id="12_lpp54"]
 [ext_resource type="PackedScene" uid="uid://c78y6bedxtfci" path="res://art/dice.gltf" id="13_cl07s"]
 [ext_resource type="PackedScene" uid="uid://rcidqi2tuld4" path="res://art/round bead.gltf" id="14_1cflx"]
+[ext_resource type="PackedScene" uid="uid://cn1av7riqc7vm" path="res://art/kite-2d.gltf" id="16_48s4e"]
 [ext_resource type="PackedScene" uid="uid://cvxfbr1j1m60w" path="res://art/stool.gltf" id="16_ivpty"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kk0n"]
@@ -267,3 +268,6 @@ visible = false
 
 [node name="stool" parent="." instance=ExtResource("16_ivpty")]
 transform = Transform3D(3.08131, -0.217426, 3.9317, 1.0352, 4.86149, -0.542447, -3.7992, 1.1483, 3.04097, 55.3955, 8.98146, -0.364383)
+
+[node name="Root" parent="." instance=ExtResource("16_48s4e")]
+transform = Transform3D(75.5808, -60.2073, 25.7415, 40.4346, 73.836, 53.9749, -51.5033, -30.3862, 80.1504, 64.5896, 40.0858, -131.491)

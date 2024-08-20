@@ -2,7 +2,7 @@ extends Area3D
 
 func _on_body_entered(_body: Node3D) -> void:
 	print("_on_body_entered")
-	$Explosion.explode()
+	$Explosion.explode()  
 	$ExplosionSound.play()
 	$Timer.start()
 
