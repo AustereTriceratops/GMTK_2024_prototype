@@ -32,7 +32,7 @@ func on_level_select_idx_pressed(level_idx:int):
 		1:
 			next_level_resource = preload("res://scenes/artonlylevel.tscn").instantiate()
 		2:
-			next_level_resource = preload("res://scenes/3dtestscene.tscn").instantiate()
+			next_level_resource = preload("res://scenes/level2.tscn").instantiate()
 		_:
 			push_warning("No scene is assigned for this level select button")
 			return
