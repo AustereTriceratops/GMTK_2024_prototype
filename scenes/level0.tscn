@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://byxfdpoedefbn"]
 
 [ext_resource type="Material" uid="uid://c1mtn7nd63mdo" path="res://shaders/checkerboard_mat.tres" id="1_3njaf"]
-[ext_resource type="PackedScene" uid="uid://brxyoamqb6n0q" path="res://scenes/level_complete_collectable.tscn" id="1_msqcs"]
+[ext_resource type="PackedScene" uid="uid://cdiy3enf0hti1" path="res://scenes/level_complete_collectable.tscn" id="1_msqcs"]
 [ext_resource type="Texture2D" uid="uid://opq5r6wt7s8u" path="res://art/imgs/wood.png" id="1_vq61o"]
 [ext_resource type="Texture2D" uid="uid://cx7qkd7k2a4vm" path="res://art/imgs/woodblue.png" id="2_w42s6"]
 [ext_resource type="PackedScene" uid="uid://rxhnw21rvlnq" path="res://art/ablock.gltf" id="3_mbh24"]
