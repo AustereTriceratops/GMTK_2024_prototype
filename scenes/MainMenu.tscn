@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1ktn5xkj85vs"]
+[gd_scene load_steps=16 format=3 uid="uid://d1ktn5xkj85vs"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_3qt84"]
 [ext_resource type="Texture2D" uid="uid://ccps6eip5dkan" path="res://art/ui/square_white_16x16.png" id="1_uvhe4"]
 [ext_resource type="Theme" uid="uid://fbhhd35pioar" path="res://theme/MainTheme.tres" id="1_ylit7"]
 [ext_resource type="Texture2D" uid="uid://bmidcid08nwib" path="res://art/ui/menu_panel.png" id="2_s731j"]
+[ext_resource type="AudioStream" uid="uid://b1iygesr7acd8" path="res://audio/sfx/triumphant-ascending-hold.wav" id="4_bo0d5"]
 [ext_resource type="AudioStream" uid="uid://dsdxmqb7npcah" path="res://audio/sfx/ascending_do-do-do.wav" id="4_p1un5"]
 [ext_resource type="Script" path="res://scripts/ui/button_reports_sibling_idx.gd" id="5_m1o63"]
 [ext_resource type="AudioStream" uid="uid://d2o8f3d8sdevq" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
@@ -13,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://djjvuucvsnj0f" path="res://art/ui/ruler_pattern.png" id="8_qnu07"]
 [ext_resource type="Texture2D" uid="uid://brk55vyoa6s3g" path="res://art/ui/checkerboard_full.png" id="9_0il0o"]
 [ext_resource type="Texture2D" uid="uid://bvmrx4uscqtri" path="res://assets/coin.png" id="9_f27hl"]
-[ext_resource type="Texture2D" uid="uid://ceu8ss1oae662" path="res://art/ui/star.png" id="9_fkqtd"]
+[ext_resource type="Texture2D" uid="uid://bvv1d0ttcih04" path="res://art/ui/star.png" id="9_fkqtd"]
 
 [node name="MainMenu" type="Node" node_paths=PackedStringArray("level_button_parent")]
 script = ExtResource("1_3qt84")
@@ -31,9 +32,17 @@ script = ExtResource("7_03vpd")
 wait_time = 0.1
 autostart = true
 
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="CanvasLayer/AudioStreamPlayer"]
+stream = ExtResource("4_bo0d5")
+volume_db = -10.0
+
 [node name="SFXPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AudioStreamPlayer"]
 stream = ExtResource("4_p1un5")
 volume_db = -10.0
+
+[node name="LevelCompleteSound" type="AudioStreamPlayer" parent="CanvasLayer/AudioStreamPlayer"]
+stream = ExtResource("4_bo0d5")
+volume_db = -30.0
 
 [node name="Control2" type="Control" parent="CanvasLayer"]
 layout_mode = 3

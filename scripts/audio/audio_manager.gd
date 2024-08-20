@@ -7,8 +7,12 @@ extends AudioStreamPlayer
 
 func _ready() -> void:
 	Globals.score_increment.connect(on_score_increment)
+	Globals.current_level_complete.connect(on_level_completed)
 	vol_slider.value = volume_db
 	vol_slider.value_changed.connect(_on_volume_slider_value_changed)
+	
+func on_level_completed(level):
+	pass
 	
 func on_score_increment():
 	sfx_player.stream = score_increment_sfx

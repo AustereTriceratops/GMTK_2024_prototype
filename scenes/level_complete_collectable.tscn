@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level_complete_collectable.gd" id="1_hjdeu"]
 [ext_resource type="Script" path="res://scripts/EmitOnVisible.gd" id="2_ujpyn"]
 [ext_resource type="ArrayMesh" uid="uid://dtv8comc4hgag" path="res://art/meshes/jack_mesh.tres" id="3_i3h01"]
-[ext_resource type="AudioStream" uid="uid://dsdxmqb7npcah" path="res://audio/sfx/ascending_do-do-do.wav" id="4_v7dne"]
+[ext_resource type="AudioStream" uid="uid://dondlgjo2mjcy" path="res://audio/sfx/explosion5.wav" id="4_evfcs"]
 
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_omjou"]
 
@@ -116,7 +116,7 @@ radius = 0.881689
 [node name="LevelCompleteCollectable" type="Area3D"]
 transform = Transform3D(0.92388, 0, 0.382684, 0, 1, 0, -0.382684, 0, 0.92388, 0.471823, 2.77102, 0)
 collision_layer = 4
-collision_mask = 0
+collision_mask = 4
 script = ExtResource("1_hjdeu")
 
 [node name="Explosion" type="Node3D" parent="."]
@@ -158,13 +158,13 @@ mesh = ExtResource("3_i3h01")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_qc17g")
 
-[node name="LevelCompleteSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_v7dne")
-volume_db = -10.0
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_evfcs")
+volume_db = -5.63
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="visibility_changed" from="Explosion" to="Explosion" method="_on_visibility_changed"]
