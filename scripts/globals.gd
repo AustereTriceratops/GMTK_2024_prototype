@@ -14,6 +14,9 @@ signal score_increment()
 @export var PLAYER_MAX_SPEED = 20
 @export var PLAYER_STOP_SPEED = 0.1
 
+@export var level_complete = [false, true, false]
+@export var current_level = 0
+
 var player
 
 func set_player(current_player):

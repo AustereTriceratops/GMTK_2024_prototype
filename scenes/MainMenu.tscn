@@ -1,16 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1ktn5xkj85vs"]
+[gd_scene load_steps=10 format=3 uid="uid://d1ktn5xkj85vs"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_3qt84"]
 [ext_resource type="Texture2D" uid="uid://ccps6eip5dkan" path="res://art/ui/square_white_16x16.png" id="1_uvhe4"]
 [ext_resource type="Theme" uid="uid://fbhhd35pioar" path="res://theme/MainTheme.tres" id="1_ylit7"]
 [ext_resource type="Texture2D" uid="uid://bmidcid08nwib" path="res://art/ui/menu_panel.png" id="2_s731j"]
-[ext_resource type="AudioStream" uid="uid://hep47xeotv7g" path="res://audio/sfx/ascending_do-do-do.wav" id="4_p1un5"]
+[ext_resource type="AudioStream" uid="uid://g76epf7wtwkv" path="res://audio/sfx/ascending_do-do-do.wav" id="4_p1un5"]
 [ext_resource type="Script" path="res://scripts/ui/button_reports_sibling_idx.gd" id="5_m1o63"]
 [ext_resource type="AudioStream" uid="uid://d2o8f3d8sdevq" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="7_03vpd"]
+[ext_resource type="Texture2D" uid="uid://ceu8ss1oae662" path="res://art/ui/star.png" id="9_fkqtd"]
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" node_paths=PackedStringArray("stars", "level_button_parent")]
 script = ExtResource("1_3qt84")
+stars = [NodePath("CanvasLayer/Control2/Control/Button/TextureRect"), NodePath("CanvasLayer/Control2/Control/Button2/TextureRect2"), NodePath("CanvasLayer/Control2/Control/Button3/TextureRect3")]
+level_button_parent = NodePath("CanvasLayer/Control2/Control")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -105,27 +108,51 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="CanvasLayer/Control2/Control"]
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(700, 150)
 layout_mode = 0
 offset_left = -467.0
-offset_top = -6.0
-offset_right = 133.0
-offset_bottom = 94.0
+offset_top = -164.0
+offset_right = 233.0
+offset_bottom = -64.0
 text = "I See A Tree (level0)"
 script = ExtResource("5_m1o63")
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control2/Control/Button" groups=["level_complete"]]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("9_fkqtd")
+
 [node name="Button2" type="Button" parent="CanvasLayer/Control2/Control"]
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(700, 150)
 layout_mode = 0
 offset_left = -314.0
-offset_top = 106.0
-offset_right = 286.0
-offset_bottom = 206.0
+offset_top = 37.0
+offset_right = 386.0
+offset_bottom = 137.0
 text = "I Spot an Lock (artonlylevel)"
 script = ExtResource("5_m1o63")
 
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control2/Control/Button2" groups=["level_complete"]]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("9_fkqtd")
+
 [node name="Button3" type="Button" parent="CanvasLayer/Control2/Control"]
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(700, 150)
 layout_mode = 0
 offset_left = -145.0
 offset_top = 216.0
@@ -133,6 +160,18 @@ offset_right = 455.0
 offset_bottom = 316.0
 text = "I Sight a Kite (3dtestscene)"
 script = ExtResource("5_m1o63")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control2/Control/Button3" groups=["level_complete"]]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_vertical = 2
+texture = ExtResource("9_fkqtd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10

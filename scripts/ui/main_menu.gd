@@ -2,6 +2,12 @@ extends Node
 
 @onready var showhide_menu = $CanvasLayer/Control2
 @onready var menu_scene = $CanvasLayer
+@export var stars : Array[Node] = []
+@export var level_button_parent : Node
+
+func _ready() -> void:
+	update_star_completion()
+				
 
 func on_level_select_idx_pressed(level_idx:int):
 	#print("Pushed button to change to level %s" % level_idx)
@@ -23,7 +29,13 @@ func on_level_select_idx_pressed(level_idx:int):
 		_:
 			push_warning("No scene is assigned for this level select button")
 			return
+	Globals.current_level = level_idx
 	add_child(next_level_resource) 
 
 func _on_toggle_main_menu_button_pressed() -> void:
 	showhide_menu.visible = !showhide_menu.visible
+	update_star_completion()
+
+func update_star_completion():
+	for i in range(stars.size()):
+		stars[i].visible = Globals.level_complete[i] 

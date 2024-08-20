@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://byxfdpoedefbn"]
+[gd_scene load_steps=34 format=3 uid="uid://byxfdpoedefbn"]
 
 [ext_resource type="Material" uid="uid://c1mtn7nd63mdo" path="res://shaders/checkerboard_mat.tres" id="1_3njaf"]
+[ext_resource type="PackedScene" uid="uid://brxyoamqb6n0q" path="res://scenes/level_complete_collectable.tscn" id="1_msqcs"]
 [ext_resource type="Texture2D" uid="uid://d3qdnbqbe5nsy" path="res://art/imgs/wood.png" id="1_vq61o"]
 [ext_resource type="Texture2D" uid="uid://cx7qkd7k2a4vm" path="res://art/imgs/woodblue.png" id="2_w42s6"]
 [ext_resource type="PackedScene" uid="uid://kst06sxfeqtg" path="res://art/ablock.gltf" id="3_mbh24"]
@@ -64,6 +65,8 @@ bounce = 0.06
 [node name="level0" type="Node3D"]
 metadata/movie_file = "vids/test3d.avi"
 
+[node name="LevelCompleteCollectable" parent="." instance=ExtResource("1_msqcs")]
+
 [node name="Floor" type="StaticBody3D" parent="." groups=["level"]]
 transform = Transform3D(25, 0, 0, 0, -1.09278e-06, 25, 0, -25, -1.09278e-06, 0, -2.5, -31)
 collision_layer = 3
@@ -126,6 +129,10 @@ collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StoolP3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70498, 0, 0)
+shape = SubResource("CylinderShape3D_t3drh")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02285, -4.58468, 0)
 shape = SubResource("CylinderShape3D_t3drh")
 
 [node name="level-mesh" type="MeshInstance3D" parent="StoolP3"]

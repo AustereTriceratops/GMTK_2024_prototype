@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://brxyoamqb6n0q"]
+
+[ext_resource type="Script" path="res://scripts/level_complete_collectable.gd" id="1_hjdeu"]
+[ext_resource type="PackedScene" uid="uid://df6af6hm2wp4a" path="res://scenes/explosion.tscn" id="2_641ru"]
+[ext_resource type="ArrayMesh" uid="uid://dtv8comc4hgag" path="res://art/meshes/jack_mesh.tres" id="3_i3h01"]
+[ext_resource type="AudioStream" uid="uid://hep47xeotv7g" path="res://audio/sfx/ascending_do-do-do.wav" id="4_v7dne"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qc17g"]
+radius = 0.881689
+
+[node name="LevelCompleteCollectable" type="Area3D"]
+transform = Transform3D(0.92388, 0, 0.382684, 0, 1, 0, -0.382684, 0, 0.92388, 0.471823, 2.77102, 0)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_hjdeu")
+
+[node name="Explosion" parent="." instance=ExtResource("2_641ru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("3_i3h01")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qc17g")
+
+[node name="LevelCompleteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v7dne")
+volume_db = -10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
