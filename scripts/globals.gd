@@ -1,6 +1,7 @@
 extends Node
 
 signal player_update()
+signal score_increment()
 
 @export var PLAYER_SCALE_LENGTH = 1.0
 @export var PLAYER_JUMP_SPEED = 5
@@ -22,5 +23,6 @@ func increment_score():
 	PLAYER_SCALE_LENGTH += 0.1
 	PLAYER_JUMP_SPEED += 0.4
 	player_update.emit()
+	score_increment.emit()
 	if is_instance_valid(player):
 		player.set_scale_length(PLAYER_SCALE_LENGTH)

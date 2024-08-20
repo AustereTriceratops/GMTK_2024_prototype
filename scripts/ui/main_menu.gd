@@ -13,7 +13,7 @@ func on_level_select_idx_pressed(level_idx:int):
 			child.queue_free() # delete other levels
 	
 	var next_level_resource
-	match level_idx:
+	match level_idx: # TODO update these to whatever the actual levels will be
 		0:
 			next_level_resource = preload("res://scenes/level0.tscn").instantiate()
 		1:

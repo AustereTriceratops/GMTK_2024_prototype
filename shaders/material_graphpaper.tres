@@ -1,0 +1,11 @@
+[gd_resource type="PlaneMesh" load_steps=3 format=3 uid="uid://ktvpd5awbq2h"]
+
+[ext_resource type="Texture2D" uid="uid://d3qdnbqbe5nsy" path="res://art/imgs/wood.png" id="1_k3iad"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gywtt"]
+albedo_color = Color(0.481789, 0.481789, 0.481789, 1)
+albedo_texture = ExtResource("1_k3iad")
+
+[resource]
+material = SubResource("StandardMaterial3D_gywtt")
+size = Vector2(10, 5)

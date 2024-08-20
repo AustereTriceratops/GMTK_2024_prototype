@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1ktn5xkj85vs"]
+[gd_scene load_steps=9 format=3 uid="uid://d1ktn5xkj85vs"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_3qt84"]
 [ext_resource type="Texture2D" uid="uid://ccps6eip5dkan" path="res://art/ui/square_white_16x16.png" id="1_uvhe4"]
 [ext_resource type="Theme" uid="uid://fbhhd35pioar" path="res://theme/MainTheme.tres" id="1_ylit7"]
 [ext_resource type="Texture2D" uid="uid://bmidcid08nwib" path="res://art/ui/menu_panel.png" id="2_s731j"]
+[ext_resource type="AudioStream" uid="uid://hep47xeotv7g" path="res://audio/sfx/ascending_do-do-do.wav" id="4_p1un5"]
 [ext_resource type="Script" path="res://scripts/ui/button_reports_sibling_idx.gd" id="5_m1o63"]
 [ext_resource type="AudioStream" uid="uid://d2o8f3d8sdevq" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="7_03vpd"]
@@ -22,6 +23,10 @@ script = ExtResource("7_03vpd")
 [node name="UpdateAudioTimer" type="Timer" parent="CanvasLayer/AudioStreamPlayer"]
 wait_time = 0.1
 autostart = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="CanvasLayer/AudioStreamPlayer"]
+stream = ExtResource("4_p1un5")
+volume_db = -10.0
 
 [node name="Control2" type="Control" parent="CanvasLayer"]
 layout_mode = 3

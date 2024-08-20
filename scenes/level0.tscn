@@ -1,6 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://byxfdpoedefbn"]
+[gd_scene load_steps=33 format=3 uid="uid://byxfdpoedefbn"]
 
+[ext_resource type="Material" uid="uid://c1mtn7nd63mdo" path="res://shaders/checkerboard_mat.tres" id="1_3njaf"]
 [ext_resource type="Texture2D" uid="uid://d3qdnbqbe5nsy" path="res://art/imgs/wood.png" id="1_vq61o"]
+[ext_resource type="Texture2D" uid="uid://cx7qkd7k2a4vm" path="res://art/imgs/woodblue.png" id="2_w42s6"]
 [ext_resource type="PackedScene" uid="uid://kst06sxfeqtg" path="res://art/ablock.gltf" id="3_mbh24"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="3_rvscj"]
 [ext_resource type="PackedScene" uid="uid://cq7dabss50oue" path="res://art/americaball.gltf" id="4_mouu1"]
@@ -15,6 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://17mdrbi5aikn" path="res://art/yellowball.gltf" id="12_4jniw"]
 [ext_resource type="PackedScene" uid="uid://ugir4146ei1v" path="res://art/woodenblock.gltf" id="13_foyqp"]
 [ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="14_e3w3k"]
+[ext_resource type="PackedScene" uid="uid://dq4d128n4hkxk" path="res://art/woodenarch.gltf" id="15_ma11q"]
+[ext_resource type="PlaneMesh" uid="uid://ktvpd5awbq2h" path="res://shaders/material_graphpaper.tres" id="19_s3t55"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jsulv"]
+size = Vector3(15, 15, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6j17"]
+size = Vector3(15, 15, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os6ym"]
 albedo_texture = ExtResource("1_vq61o")
@@ -22,8 +32,26 @@ albedo_texture = ExtResource("1_vq61o")
 [sub_resource type="BoxMesh" id="BoxMesh_fxpf6"]
 size = Vector3(7, 0.2, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_d6j17"]
-size = Vector3(4, 0.2, 0.2)
+[sub_resource type="BoxMesh" id="BoxMesh_qg4oy"]
+size = Vector3(1, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7v6ik"]
+size = Vector3(1, 0.2, 0.2)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t3drh"]
+height = 7.0918
+radius = 15.0203
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayad6"]
+albedo_texture = ExtResource("2_w42s6")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fnax3"]
+top_radius = 15.0
+bottom_radius = 15.0
+height = 7.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g25v5"]
+size = Vector3(1.87848, 1.44482, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kk0n"]
 friction = 0.07
@@ -37,13 +65,13 @@ bounce = 0.06
 metadata/movie_file = "vids/test3d.avi"
 
 [node name="Floor" type="StaticBody3D" parent="." groups=["level"]]
-transform = Transform3D(25, 0, 0, 0, -1.09278e-06, 25, 0, -25, -1.09278e-06, 0, -2.5, 0)
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, 25, 0, -25, -1.09278e-06, 0, -2.5, -31)
 collision_layer = 3
 
 [node name="level-mesh" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_os6ym")
-mesh = SubResource("BoxMesh_fxpf6")
+material_override = ExtResource("1_3njaf")
+mesh = SubResource("BoxMesh_jsulv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
@@ -51,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_d6j17")
 
 [node name="LeftWall" type="StaticBody3D" parent="." groups=["level"]]
-transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, -15.0306, 7.56483, 0)
+transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, -61.1036, 7.56483, 0)
 collision_layer = 3
 
 [node name="level-mesh" type="MeshInstance3D" parent="LeftWall"]
@@ -63,6 +91,68 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_d6j17")
+
+[node name="StoolP1" type="StaticBody3D" parent="." groups=["level"]]
+transform = Transform3D(19.7394, 15.3413, 0, -15.3413, 19.7394, 0, 0, 0, 25, -30.394, 5.54462, -0.180705)
+collision_layer = 3
+
+[node name="level-mesh" type="MeshInstance3D" parent="StoolP1"]
+transform = Transform3D(1, 2.98023e-08, -1.05879e-22, -2.98023e-08, 1, -3.55271e-15, 0, 3.55271e-15, 1, -0.180181, -0.140035, 0)
+material_override = SubResource("StandardMaterial3D_os6ym")
+mesh = SubResource("BoxMesh_qg4oy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolP1"]
+transform = Transform3D(1, 2.98023e-08, -4.23516e-22, -2.98023e-08, 1, -1.06581e-14, 0, 1.06581e-14, 1, -0.180181, -0.140035, 0)
+shape = SubResource("BoxShape3D_7v6ik")
+
+[node name="StoolP2" type="StaticBody3D" parent="." groups=["level"]]
+transform = Transform3D(-19.9275, 15.0962, 0, -15.0962, -19.9275, 0, 0, 0, 25, -43.5851, 3.87305, -0.809607)
+collision_layer = 3
+
+[node name="level-mesh" type="MeshInstance3D" parent="StoolP2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181897, -0.137797, 0)
+material_override = SubResource("StandardMaterial3D_os6ym")
+mesh = SubResource("BoxMesh_qg4oy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolP2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181897, -0.137797, 0)
+shape = SubResource("BoxShape3D_7v6ik")
+
+[node name="StoolP3" type="StaticBody3D" parent="." groups=["level"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.808, 13.0545, -0.809607)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70498, 0, 0)
+shape = SubResource("CylinderShape3D_t3drh")
+
+[node name="level-mesh" type="MeshInstance3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70498, 0, 0)
+material_override = SubResource("StandardMaterial3D_ayad6")
+mesh = SubResource("CylinderMesh_fnax3")
+skeleton = NodePath("")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70498, -3.92274, 0.4638)
+inner_radius = 16.1566
+outer_radius = 14.727
+sides = 10
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42777, -4.01883, 0.48327)
+shape = SubResource("BoxShape3D_g25v5")
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70498, 3.25733, 0.4638)
+inner_radius = 16.1566
+outer_radius = 14.727
+sides = 10
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StoolP3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42777, 3.16123, 0.48327)
+shape = SubResource("BoxShape3D_g25v5")
 
 [node name="RightWall" type="StaticBody3D" parent="." groups=["level"]]
 transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, 56.0731, 7.56483, 0)
@@ -108,6 +198,12 @@ transform = Transform3D(-0.974605, 0, -0.223931, 0, 1, 0, 0.223931, 0, -0.974605
 [node name="ablock2" parent="Obstacles" instance=ExtResource("3_mbh24")]
 transform = Transform3D(-0.804997, 0, -0.593278, 0, 1, 0, 0.593278, 0, -0.804997, -0.644593, 0.18732, 0)
 
+[node name="ablock3" parent="Obstacles" instance=ExtResource("3_mbh24")]
+transform = Transform3D(-0.17241, 0, 0.985025, 0, 1, 0, -0.985025, 0, -0.17241, -2.01591, 0.245309, 0)
+
+[node name="ablock4" parent="Obstacles" instance=ExtResource("3_mbh24")]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -1.60679, 0.11697, 0)
+
 [node name="americaball" parent="Obstacles" instance=ExtResource("4_mouu1")]
 transform = Transform3D(0.630093, 0.776519, 0, -0.776519, 0.630093, 0, 0, 0, 1, -0.812883, 0.124988, 0)
 
@@ -116,6 +212,78 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.427988, 0.0344724, 0)
 
 [node name="blueblock" parent="Obstacles" instance=ExtResource("6_ku7x4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17401, 0.169445, 0)
+
+[node name="blueblock2" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(2.30904, 0.638432, 0, -1.9153, 0.769678, 0, 0, 0, 1, -2.73005, 0.403952, 0)
+
+[node name="blueblock3" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.63815, 0.769912, 0, -0.769912, 0.63815, 0, 0, 0, 1, -2.37734, 0.578477, -0.043111)
+
+[node name="blueblock18" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.63815, 0.769912, 0, -0.769912, 0.63815, 0, 0, 0, 1, -2.64513, 1.21446, 0)
+
+[node name="blueblock19" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.63815, 0.769912, 0, -0.769912, 0.63815, 0, 0, 0, 1, -2.35801, 1.00803, 0.0614859)
+
+[node name="blueblock20" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.63815, 0.769912, 0, -0.769912, 0.63815, 0, 0, 0, 1, -2.10136, 0.783178, 0)
+
+[node name="blueblock8" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.63815, 0.769912, 0, -0.769912, 0.63815, 0, 0, 0, 1, -2.62125, 0.795655, -0.140289)
+
+[node name="blueblock5" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.894225, 0, -0.447619, 0, 1, 0, 0.447619, 0, 0.894225, -3.93413, 1.82574, 0)
+
+[node name="blueblock6" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.894225, 0, -0.447619, 0, 1, 0, 0.447619, 0, 0.894225, -4.39797, 1.82574, 0)
+
+[node name="blueblock7" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.909635, 0, 0.415408, 0, 1, 0, -0.415408, 0, 0.909635, -4.21444, 2.16611, 0)
+
+[node name="blueblock9" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.894225, 0, -0.447619, 0, 1, 0, 0.447619, 0, 0.894225, 0.589428, 0.177211, -1.76974)
+
+[node name="blueblock10" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.894225, 0, -0.447619, 0, 1, 0, 0.447619, 0, 0.894225, 0.125586, 0.177211, -1.76974)
+
+[node name="blueblock11" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.909635, 0, 0.415408, 0, 1, 0, -0.415408, 0, 0.909635, 0.309121, 0.517584, -1.76974)
+
+[node name="blueblock12" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(-0.0597768, 0, -0.998212, 0, 1, 0, 0.998212, 0, -0.0597768, 1.07486, 0.177211, -1.54168)
+
+[node name="blueblock13" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(-0.0597768, 0, -0.998212, 0, 1, 0, 0.998212, 0, -0.0597768, 0.892399, 0.177211, -1.96813)
+
+[node name="blueblock14" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.739737, 0, -0.672896, 0, 1, 0, 0.672896, 0, 0.739737, 0.964595, 0.517584, -1.79939)
+
+[node name="blueblock15" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(-0.0597768, 0, -0.998212, 0, 1, 0, 0.998212, 0, -0.0597768, 1.80862, 0.177211, -1.54168)
+
+[node name="blueblock16" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(-0.0597768, 0, -0.998212, 0, 1, 0, 0.998212, 0, -0.0597768, 1.62616, 0.177211, -1.96813)
+
+[node name="blueblock17" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.739737, 0, -0.672896, 0, 1, 0, 0.672896, 0, 0.739737, 2.44797, 0.176528, -1.79939)
+
+[node name="blueblock4" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.40755, 0.913183, 0, -0.913183, 0.40755, 0, 0, 0, 1, -1.46086, 0.34556, 0)
+
+[node name="blueblock22" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.40755, 0.913183, 0, -0.913183, 0.40755, 0, 0, 0, 1, -1.7801, 0.562344, -0.0581436)
+
+[node name="blueblock23" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.796435, 0, -0.604724, 0, 1, 0, 0.604724, 0, 0.796435, -1.5085, 0.16, 0.5)
+
+[node name="blueblock25" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.796435, 0, -0.604724, 0, 1, 0, 0.604724, 0, 0.796435, 5.25566, 0.16, 0.5)
+
+[node name="blueblock24" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.0925965, 0, -0.995704, 0, 1, 0, 0.995704, 0, 0.0925965, -2.14164, 0.16, 0.5)
+
+[node name="blueblock21" parent="Obstacles" instance=ExtResource("6_ku7x4")]
+transform = Transform3D(0.40755, 0.913183, 0, -0.913183, 0.40755, 0, 0, 0, 1, -2.07396, 0.34556, 0)
 
 [node name="bowlingpin" parent="Obstacles" instance=ExtResource("7_010d4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14305, 0.0187831, 0)
@@ -263,6 +431,9 @@ transform = Transform3D(8.5202, -4.57667e-07, -5.2351, 1.40614e-14, -10, 8.74228
 [node name="doxie8" parent="Obstacles/Dixie Cups" instance=ExtResource("9_0dqex")]
 transform = Transform3D(3.36832, 8.23142e-07, 9.41565, 0, -10, 8.74228e-07, 9.41565, -2.94468e-07, -3.36832, 36.4349, 0.290501, 0)
 
+[node name="woodenarch" parent="Obstacles" instance=ExtResource("15_ma11q")]
+transform = Transform3D(0.0322655, 0, 0.999479, 0, 1, 0, -0.999479, 0, 0.0322655, -1.30198, 0.0264872, 0.04)
+
 [node name="Woodblocks" type="Node" parent="Obstacles"]
 
 [node name="woodenblock" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
@@ -281,13 +452,25 @@ transform = Transform3D(0.713901, -0.0519596, 9.97435, 0.0783546, 9.99959, 0.046
 transform = Transform3D(9.99365, 0, 0.356321, 0, 10, 0, -0.356321, 0, 9.99365, -9.69043, 1.17286, 0.343196)
 
 [node name="woodenblock9" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(9.77541, 2.10745, -9.21195e-08, 1.38407e-15, -4.37114e-07, -10, -2.10745, 9.77541, -4.27297e-07, -10.5828, 1.93111, 0.0500971)
+transform = Transform3D(9.77541, 2.10745, -9.21195e-08, 0, -4.37114e-07, -10, -2.10745, 9.77541, -4.27297e-07, -10.5828, 1.93111, 0.0500971)
 
 [node name="woodenblock14" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
 transform = Transform3D(9.99848, 0.174524, -7.62869e-09, 0, -4.37114e-07, -10, -0.174524, 9.99848, -4.37047e-07, -9.70127, 1.90323, 0.083891)
 
 [node name="woodenblock12" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
-transform = Transform3D(9.13019, -4.07916, 1.78306e-07, 1.38407e-15, -4.37114e-07, -10, 4.07916, 9.13019, -3.99093e-07, -11.8667, 1.91717, 0.0517708)
+transform = Transform3D(9.13019, -4.07916, 1.78306e-07, 0, -4.37114e-07, -10, 4.07916, 9.13019, -3.99093e-07, -11.8667, 1.91717, 0.0517708)
+
+[node name="woodenblock22" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(9.77541, 2.10745, -9.21195e-08, 0, -4.37114e-07, -10, -2.10745, 9.77541, -4.27297e-07, -48.9621, 14.6588, 0.0500971)
+
+[node name="woodenblock23" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(9.99848, 0.174524, -7.62869e-09, 0, -4.37114e-07, -10, -0.174524, 9.99848, -4.37047e-07, -48.0805, 14.6309, 0.083891)
+
+[node name="woodenblock28" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(-4.37372e-07, -4.26119e-07, -10, -9.99848, -0.174524, 4.44743e-07, -0.174524, 9.99848, -4.37047e-07, -47.2558, 14.6309, 0.083891)
+
+[node name="woodenblock24" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(9.13019, -4.07916, 1.78306e-07, 0, -4.37114e-07, -10, 4.07916, 9.13019, -3.99093e-07, -50.246, 14.6449, 0.0517708)
 
 [node name="woodenblock13" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
 transform = Transform3D(-4.37114e-07, 0, -10, 0, 10, 0, 10, 0, -4.37114e-07, -11.8958, 3.86825, 0.0731837)
@@ -328,10 +511,22 @@ transform = Transform3D(9.71863, 0, 2.35549, 0, 10, 0, -2.35549, 0, 9.71863, -5.
 [node name="woodenblock21" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
 transform = Transform3D(9.71863, 0, 2.35549, 0, 10, 0, -2.35549, 0, 9.71863, -6.23192, 1.19922, 0.441396)
 
+[node name="woodenblock25" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(8.60048, 0, 5.10213, 0, 10, 0, -5.10213, 0, 8.60048, -13.848, 0.975813, 0.683461)
+
+[node name="woodenblock29" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(8.60048, 0, 5.10213, 0, 10, 0, -5.10213, 0, 8.60048, -15.2737, 0.440174, 0.683461)
+
+[node name="woodenblock26" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(9.9822, 0, 0.596374, 0, 10, 0, -0.596374, 0, 9.9822, -12.8584, 0.975813, 0.683461)
+
+[node name="woodenblock27" parent="Obstacles/Woodblocks" instance=ExtResource("13_foyqp")]
+transform = Transform3D(9.15613, -3.35271, 2.21916, 3.25837, 9.42122, 0.789727, -2.35549, 0, 9.71863, -13.0391, 1.86725, 0.441396)
+
 [node name="Collectables" type="Node3D" parent="."]
 
 [node name="coin" parent="Collectables" instance=ExtResource("14_e3w3k")]
-transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -11.8877, 5.41329, 0)
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -17.8968, 5.41329, 0)
 
 [node name="coin2" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 1.99199, 0.336929, 0)
@@ -357,6 +552,24 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 [node name="coin12" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -4.17466, 0.898478, 0)
 
+[node name="coin13" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 50.8603, 4.09291, 0)
+
+[node name="coin14" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 51.4643, 4.09291, 0)
+
+[node name="coin15" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 52.0332, 4.09291, 0)
+
+[node name="coin16" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 51.7268, 4.67932, 0)
+
+[node name="coin17" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 51.1229, 4.67932, 0)
+
+[node name="coin18" parent="Collectables" instance=ExtResource("14_e3w3k")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 50.414, 4.67932, 0)
+
 [node name="coin5" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 11.7993, 0.183839, 0)
 
@@ -365,3 +578,15 @@ transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 
 
 [node name="coin7" parent="Collectables" instance=ExtResource("14_e3w3k")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 48.1339, 3.73295, 0)
+
+[node name="BackgroundPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(60, 0, 0, 0, -2.62268e-06, -60, 0, 60, -2.62268e-06, 11.3035, 94.4242, -231.036)
+mesh = ExtResource("19_s3t55")
+
+[node name="BackgroundPlane3" type="MeshInstance3D" parent="."]
+transform = Transform3D(34.2978, 49.2307, -2.15194e-06, 0, -2.62268e-06, -60, -49.2307, 34.2978, -1.49921e-06, -122.022, 94.4242, -231.036)
+mesh = ExtResource("19_s3t55")
+
+[node name="BackgroundPlane2" type="MeshInstance3D" parent="."]
+transform = Transform3D(43.081, -41.7615, 1.82545e-06, 0, -2.62268e-06, -60, 41.7615, 43.081, -1.88313e-06, 207.52, 104.712, -136.568)
+mesh = ExtResource("19_s3t55")

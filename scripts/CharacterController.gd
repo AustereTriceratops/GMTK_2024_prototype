@@ -13,6 +13,8 @@ var velocity = Vector3()
 @onready var mesh : MeshInstance3D = $Mesh
 @onready var meterstick_mat : ShaderMaterial = \
 	 preload("res://shaders/meterstick_material.tres")
+	
+var double_jump_allowed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +23,7 @@ func _ready():
 	Globals.set_player(self)
 	
 func on_player_update():
+	print("on_player_update")
 	set_scale_length(Globals.PLAYER_SCALE_LENGTH)
 	
 	
@@ -52,22 +55,26 @@ func _physics_process(delta: float) -> void:
 		Globals.PLAYER_ACCELERATION * Globals.PLAYER_ACCEL_MULTIPLIER * delta)
 	apply_central_force(velocity)
 	
-	
-	
-	if get_contact_count() > 0 and (feet.is_colliding() or feet1.is_colliding() or feet2.is_colliding()):
+	if get_contact_count() > 0 and feet.is_colliding():
 		# linear movement allowed if on ground
-	
 		# note that we're on floor
 		is_on_floor = true
 		gravity_scale = 1.0
 		Globals.PLAYER_ACCEL_MULTIPLIER = 1.0
-	if Input.is_action_just_pressed("jump") and is_on_floor:
-		Globals.PLAYER_ACCEL_MULTIPLIER  = 0.1
-		is_on_floor = false
-		apply_central_impulse(Vector3.UP * Globals.PLAYER_JUMP_SPEED)
-	elif !feet.is_colliding():
+		double_jump_allowed = true
+	else:
 		is_on_floor = false
 		gravity_scale = 1.0;
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor: # can jump
+			Globals.PLAYER_ACCEL_MULTIPLIER  = 0.1
+			is_on_floor = false
+			apply_central_impulse(Vector3.UP * Globals.PLAYER_JUMP_SPEED)
+		elif double_jump_allowed: # falling but can double-jump
+			double_jump_allowed = false
+			Globals.PLAYER_ACCEL_MULTIPLIER  = 0.1
+			is_on_floor = false
+			apply_central_impulse(Vector3.UP * Globals.PLAYER_JUMP_SPEED)
 
 func _integrate_forces(state):
 	#limit max speed

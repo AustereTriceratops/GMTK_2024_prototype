@@ -1,17 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://capohcmau3xpv"]
+[gd_scene load_steps=12 format=3 uid="uid://capohcmau3xpv"]
 
 [ext_resource type="Script" path="res://scripts/CharacterController.gd" id="1_m4bs3"]
+[ext_resource type="PhysicsMaterial" uid="uid://1bgvfuvht73o" path="res://physics/player_physics_mat.tres" id="2_7xcpc"]
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="2_epny7"]
 [ext_resource type="Material" uid="uid://4evk6kib5nm2" path="res://shaders/meterstick_material.tres" id="3_sw3b2"]
 [ext_resource type="Script" path="res://scripts/GroundDetect.gd" id="3_t151e"]
+[ext_resource type="Shader" path="res://shaders/blur_transp.gdshader" id="6_m4a20"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p3y87"]
 radius = 0.1
 height = 1.0
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r5w80"]
-friction = 0.43
-bounce = 0.4
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uhbae"]
 radius = 0.1
@@ -20,6 +18,20 @@ height = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_4yskk"]
 material = ExtResource("3_sw3b2")
 size = Vector3(0.2, 1, 0.1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_qf0ym"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 0.1
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.0
+dof_blur_near_transition = 0.1
+dof_blur_amount = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kxnnq"]
+shader = ExtResource("6_m4a20")
+shader_parameter/step = null
+shader_parameter/radius = 10.0
 
 [node name="PlayerScene" type="Node3D"]
 
@@ -42,7 +54,7 @@ collision_mask = 7
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
-physics_material_override = SubResource("PhysicsMaterial_r5w80")
+physics_material_override = ExtResource("2_7xcpc")
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_m4bs3")
@@ -63,9 +75,20 @@ target_position = Vector3(0, 1.4, 0)
 mesh = SubResource("BoxMesh_4yskk")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 0.990983, 0.133986, 0, -0.133986, 0.990983, 0, -0.57, 3)
+attributes = SubResource("CameraAttributesPractical_qf0ym")
 h_offset = 0.01
 v_offset = 0.71
 script = ExtResource("2_epny7")
+
+[node name="OmniLight3D" type="DirectionalLight3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 2.08165e-12, 2, -3)
+light_energy = 0.963
+light_indirect_energy = 16.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kxnnq")
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="scale_changed" from="Player" to="GroundDetectionRaycast3D" method="_on_player_scale_changed"]
