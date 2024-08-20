@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://yv4dwnlq3rvy"]
+[gd_scene load_steps=21 format=3 uid="uid://b7t6e2mkvex2y"]
 
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="1_vmka4"]
 [ext_resource type="PackedScene" uid="uid://dl04dji00qnht" path="res://art/worldsbestmom.gltf" id="3_dgyml"]
