@@ -2,6 +2,7 @@ extends Node
 
 signal player_update()
 signal score_increment()
+signal current_level_complete(current_level:int)
 
 @export var PLAYER_SCALE_LENGTH = 1.0
 @export var PLAYER_JUMP_SPEED = 5
@@ -21,6 +22,10 @@ var player
 
 func set_player(current_player):
 	player = current_player
+
+func complete_current_level():
+	level_complete[current_level] = true
+	current_level_complete.emit(current_level)
 
 func increment_score():
 	PLAYER_SCALE_LENGTH += 0.1

@@ -10,16 +10,15 @@
 [ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="7_03vpd"]
 [ext_resource type="Texture2D" uid="uid://ceu8ss1oae662" path="res://art/ui/star.png" id="9_fkqtd"]
 
-[node name="MainMenu" type="Node" node_paths=PackedStringArray("stars", "level_button_parent")]
+[node name="MainMenu" type="Node" node_paths=PackedStringArray("level_button_parent")]
 script = ExtResource("1_3qt84")
-stars = [NodePath("CanvasLayer/Control2/Control/Button/TextureRect"), NodePath("CanvasLayer/Control2/Control/Button2/TextureRect2"), NodePath("CanvasLayer/Control2/Control/Button3/TextureRect3")]
 level_button_parent = NodePath("CanvasLayer/Control2/Control")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("6_r1gbk")
-volume_db = -1.225
+volume_db = -20.0
 autoplay = true
 script = ExtResource("7_03vpd")
 
@@ -191,9 +190,10 @@ text = "Main Menu"
 [node name="VolumeSlider" type="HSlider" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-min_value = -20.0
+min_value = -50.0
 max_value = 10.0
 step = 0.1
+value = -20.0
 
 [node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/VolumeSlider"]
 layout_mode = 1

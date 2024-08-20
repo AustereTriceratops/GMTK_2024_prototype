@@ -2,21 +2,28 @@ extends Node
 
 @onready var showhide_menu = $CanvasLayer/Control2
 @onready var menu_scene = $CanvasLayer
-@export var stars : Array[Node] = []
 @export var level_button_parent : Node
 
 func _ready() -> void:
 	update_star_completion()
-				
+	Globals.current_level_complete.connect(on_level_complete)
+
+func on_level_complete(current_level):
+	remove_all_levels()
+	showhide_menu.visible = true
+	update_star_completion()
+
+func remove_all_levels():
+	for child in get_children():
+		if child != menu_scene:
+			child.queue_free() # delete other levels
 
 func on_level_select_idx_pressed(level_idx:int):
 	#print("Pushed button to change to level %s" % level_idx)
 	# Remove the current level
 	_on_toggle_main_menu_button_pressed() 
 	
-	for child in get_children():
-		if child != menu_scene:
-			child.queue_free() # delete other levels
+	remove_all_levels()
 	
 	var next_level_resource
 	match level_idx: # TODO update these to whatever the actual levels will be
@@ -37,5 +44,6 @@ func _on_toggle_main_menu_button_pressed() -> void:
 	update_star_completion()
 
 func update_star_completion():
-	for i in range(stars.size()):
-		stars[i].visible = Globals.level_complete[i] 
+	var buttons = level_button_parent.get_children()
+	for i in range(buttons.size()):
+		buttons[i].show_complete(Globals.level_complete[i])

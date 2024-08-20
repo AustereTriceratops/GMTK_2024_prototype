@@ -13,5 +13,5 @@ func _process(_delta):
 	$DEBUG_Mesh.material_override = color_collide if is_colliding() else color_no_collide
 
 
-func _on_player_scale_changed(new_scale: float) -> void:
+func _on_player_scale_changed(_new_scale: float) -> void:
 	pass #target_position = Vector3.DOWN * get_node(player_path).get_scale_length()
