@@ -24,6 +24,7 @@ func _ready():
 	
 func on_player_update():
 	print("on_player_update")
+	meterstick_mat.set_shader_parameter("y_scale", 1.0)
 	set_scale_length(Globals.PLAYER_SCALE_LENGTH)
 	
 	

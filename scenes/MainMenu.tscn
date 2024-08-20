@@ -360,7 +360,7 @@ layout_mode = 2
 focus_mode = 0
 theme = ExtResource("1_ylit7")
 toggle_mode = true
-text = "Sound On/Off"
+text = "Music On/Off"
 
 [connection signal="timeout" from="CanvasLayer/AudioStreamPlayer/UpdateAudioTimer" to="CanvasLayer/AudioStreamPlayer" method="_on_update_audio_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/ToggleMainMenuButton" to="." method="_on_toggle_main_menu_button_pressed"]
