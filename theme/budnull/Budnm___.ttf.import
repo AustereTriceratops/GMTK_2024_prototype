@@ -2,7 +2,11 @@
 
 importer="font_data_dynamic"
 type="FontFile"
+<<<<<<< HEAD
 uid="uid://bb2gxtjhe8n76"
+=======
+uid="uid://pb8l5kme4shc"
+>>>>>>> main
 path="res://.godot/imported/Budnm___.ttf-d3a599183d5df477ad36a9fdf639c490.fontdata"
 
 [deps]

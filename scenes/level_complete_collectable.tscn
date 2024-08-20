@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://brxyoamqb6n0q"]
+[gd_scene load_steps=26 format=3 uid="uid://cdiy3enf0hti1"]
 
 [ext_resource type="Script" path="res://scripts/level_complete_collectable.gd" id="1_hjdeu"]
 [ext_resource type="Script" path="res://scripts/EmitOnVisible.gd" id="2_ujpyn"]
@@ -153,6 +153,7 @@ draw_pass_1 = SubResource("SphereMesh_cfqho")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+layers = 7
 mesh = ExtResource("3_i3h01")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

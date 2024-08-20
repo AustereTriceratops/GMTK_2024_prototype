@@ -1,9 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7t6e2mkvex2y"]
+[gd_scene load_steps=21 format=3 uid="uid://b7t6e2mkvex2y"]
 
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="1_vmka4"]
+[ext_resource type="PackedScene" uid="uid://dl04dji00qnht" path="res://art/worldsbestmom.gltf" id="3_dgyml"]
+[ext_resource type="PackedScene" uid="uid://crws14mna25fa" path="res://art/yellowball-bouncy.tscn" id="5_6hsv2"]
+[ext_resource type="PackedScene" uid="uid://cf1rhdnpwqart" path="res://art/doxie.gltf" id="6_nc4mf"]
 [ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="7_7i3nd"]
+[ext_resource type="PackedScene" uid="uid://mk62bganmgxb" path="res://art/papercup.gltf" id="7_alv33"]
 [ext_resource type="PackedScene" uid="uid://ckwr8s3qlq7si" path="res://art/forest_art.gltf" id="8_2ixos"]
 [ext_resource type="PackedScene" uid="uid://roy1vavp0yq4" path="res://art/forest_leaves.gltf" id="9_uwq3x"]
+[ext_resource type="PackedScene" uid="uid://cdiy3enf0hti1" path="res://scenes/level_complete_collectable.tscn" id="9_xccln"]
+[ext_resource type="PackedScene" uid="uid://78bsft32h877" path="res://art/roundbead.gltf" id="10_j7kk5"]
+[ext_resource type="PackedScene" uid="uid://ddi68palk0wee" path="res://art/measuringtape.gltf" id="11_f8af8"]
+[ext_resource type="PackedScene" uid="uid://do5dbcjtlqjva" path="res://art/deckOfCards.gltf" id="12_lpp54"]
+[ext_resource type="PackedScene" uid="uid://c78y6bedxtfci" path="res://art/dice.gltf" id="13_cl07s"]
+[ext_resource type="PackedScene" uid="uid://rcidqi2tuld4" path="res://art/round bead.gltf" id="14_1cflx"]
+[ext_resource type="PackedScene" uid="uid://cvxfbr1j1m60w" path="res://art/stool.gltf" id="16_ivpty"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kk0n"]
 friction = 0.07
@@ -46,10 +57,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408977, 1.16661, 0)
 [node name="Collectables" type="Node3D" parent="."]
 
 [node name="coin" parent="Collectables" instance=ExtResource("7_7i3nd")]
-transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -17.8968, 5.41329, 0)
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 4.90422, 5.41329, 0)
 
 [node name="coin2" parent="Collectables" instance=ExtResource("7_7i3nd")]
 transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 1.99199, 0.336929, 0)
+
+[node name="coin3" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 18.6942, 0.336929, 0)
+
+[node name="coin4" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 17.1772, 0.336929, 0)
+
+[node name="coin5" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 19.9683, 0.336929, 0)
+
+[node name="coin6" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 15.8728, 0.336929, 0)
+
+[node name="coin7" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 33.2714, 6.30931, 0)
+
+[node name="coin8" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 30.8078, 7.22704, 0)
+
+[node name="coin9" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 30.7853, 6.30931, 0)
+
+[node name="coin10" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 29.6007, 7.1657, 0)
+
+[node name="coin11" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 31.9882, 6.30931, 0)
+
+[node name="coin12" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 33.1848, 5.17441, 0)
+
+[node name="coin13" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 33.2714, 6.30931, 0)
+
+[node name="coin14" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 30.8078, 7.22704, 0)
+
+[node name="coin15" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 30.7853, 6.30931, 0)
+
+[node name="coin16" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 29.6007, 7.1657, 0)
+
+[node name="coin17" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 31.9882, 6.30931, 0)
+
+[node name="coin18" parent="Collectables" instance=ExtResource("7_7i3nd")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, 33.1848, 5.17441, 0)
 
 [node name="Background" type="Node3D" parent="."]
 transform = Transform3D(3.44, 0, 0, 0, 3.44, 0, 0, 0, 3.44, 2.21748, 1.80837, 63.0774)
@@ -75,4 +134,136 @@ shape = SubResource("ConcavePolygonShape3D_0cx2t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4037, -1.41168, -18.349)
 
 [node name="forest_leaves" parent="." instance=ExtResource("9_uwq3x")]
-transform = Transform3D(2.82, 0, 0, 0, 2.82, 0, 0, 0, 2.82, -127.391, 14.0174, -86.4962)
+transform = Transform3D(2.82, 0, 0, 0, 2.82, 0, 0, 0, 2.82, -127.009, 16.9544, -86.824)
+
+[node name="yellowball" parent="." instance=ExtResource("5_6hsv2")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 4.84611, 0.599, 0)
+
+[node name="doxie" parent="." instance=ExtResource("6_nc4mf")]
+transform = Transform3D(0.446815, -18.3744, 7.88558, 19.9941, 0.486202, 0, -0.191699, 7.88325, 18.3798, 11.5208, 0.127244, 0)
+
+[node name="papercup" parent="." instance=ExtResource("7_alv33")]
+transform = Transform3D(-20, -1.74846e-06, 0, 1.74846e-06, -20, 0, 0, 0, 20, 9.90463, 1.20448, 0)
+
+[node name="worldsbestmom" parent="." instance=ExtResource("3_dgyml")]
+transform = Transform3D(-43.6798, 4.4934, -23.914, -3.94137, -49.7977, -2.15783, -24.0112, 5.21541e-06, 43.8573, 22.7762, 2.84431, 0)
+
+[node name="LevelCompleteCollectable" parent="." instance=ExtResource("9_xccln")]
+transform = Transform3D(0.69314, 0.661155, 0.287108, -0.487995, 0.723583, -0.488149, -0.530489, 0.198249, 0.824184, 68.5059, 13.5199, 0)
+
+[node name="yellowball2" parent="." instance=ExtResource("5_6hsv2")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 24.6284, 1.38234, 0)
+
+[node name="measuringtape" parent="." instance=ExtResource("11_f8af8")]
+transform = Transform3D(-8.2537, -38.9336, 4.00667, 0.132614, -4.12258, -39.7868, 39.139, -8.19642, 0.979743, 18.3143, 10.4489, 0)
+
+[node name="deckOfCards" parent="." instance=ExtResource("12_lpp54")]
+transform = Transform3D(0.261444, -1.76869, 19.9199, 0, 19.9216, 1.76885, -19.9983, -0.0231227, 0.260419, 10.9314, -0.384807, -1.00261)
+
+[node name="dice" parent="." instance=ExtResource("13_cl07s")]
+transform = Transform3D(18.4749, 7.66012, 0, -7.60472, 18.3413, -2.401, -0.919599, 2.21792, 19.8554, 19.5157, -3.77784, 2.51581)
+
+[node name="roundbead" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.39391, -0.0695349, 0, 0.0695349, 0.39391, 0, 0, 0, 0.4, 36.8664, 1.67884, 0)
+
+[node name="round bead" parent="roundbead" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead2" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.397263, -0.0467168, 0, 0.0467168, 0.397263, 0, 0, 0, 0.4, 36.4725, 3.05372, 0)
+
+[node name="round bead" parent="roundbead2" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead3" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.39391, -0.0695349, 0, 0.0695349, 0.39391, 0, 0, 0, 0.4, 36.7066, 2.18056, 0)
+
+[node name="round bead" parent="roundbead3" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead4" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.390658, 0.0859419, 0, -0.0859419, 0.390658, 0, 0, 0, 0.4, 37.5983, 2.02607, 0)
+
+[node name="round bead" parent="roundbead4" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead5" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.378344, -0.129831, 0, 0.129831, 0.378344, 0, 0, 0, 0.4, 36.5825, 2.57956, 0)
+
+[node name="round bead" parent="roundbead5" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead6" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.391761, 0.0807662, 0, -0.0807662, 0.391761, 0, 0, 0, 0.4, 37.6428, 2.47704, 0)
+
+[node name="round bead" parent="roundbead6" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead7" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.390018, 0.0888032, 0, -0.0888032, 0.390018, 0, 0, 0, 0.4, 36.6182, 4.01568, 0)
+
+[node name="round bead" parent="roundbead7" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead8" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.364874, 0.163912, 0, -0.163912, 0.364874, 0, 0, 0, 0.4, 36.866, 4.40529, 0)
+
+[node name="round bead" parent="roundbead8" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead9" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.305009, 0.258785, 0, -0.258785, 0.305009, 0, 0, 0, 0.4, 37.1031, 4.7875, 0)
+
+[node name="round bead" parent="roundbead9" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead10" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.399608, 0.0177128, 0, -0.0177128, 0.399608, 0, 0, 0, 0.4, 36.5035, 3.53618, 0)
+
+[node name="round bead" parent="roundbead10" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead11" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.336612, 0.216084, 0, -0.216084, 0.336612, 0, 0, 0, 0.4, 37.9231, 2.89097, 0)
+
+[node name="round bead" parent="roundbead11" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead12" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.397263, -0.0467168, 0, 0.0467168, 0.397263, 0, 0, 0, 0.4, 38.1176, 3.85565, 0)
+
+[node name="round bead" parent="roundbead12" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead13" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.39391, -0.0695349, 0, 0.0695349, 0.39391, 0, 0, 0, 0.4, 37.8687, 4.71337, 0)
+
+[node name="round bead" parent="roundbead13" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead14" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(-0.19163, 0.35111, 0, -0.35111, -0.19163, 0, 0, 0, 0.4, 37.956, 5.30704, 0)
+
+[node name="round bead" parent="roundbead14" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead15" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.378344, -0.129831, 0, 0.129831, 0.378344, 0, 0, 0, 0.4, 37.9521, 4.30534, 0)
+
+[node name="round bead" parent="roundbead15" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead16" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.169079, 0.362508, -2.22045e-17, -0.362393, 0.169025, 0.0100939, 0.00914782, -0.00426667, 0.399872, 37.352, 5.32982, 0)
+
+[node name="round bead" parent="roundbead16" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="roundbead17" parent="." instance=ExtResource("10_j7kk5")]
+transform = Transform3D(0.390018, 0.0888032, 0, -0.0888032, 0.390018, 0, 0, 0, 0.4, 38.0623, 3.41144, 0)
+
+[node name="round bead" parent="roundbead17" instance=ExtResource("14_1cflx")]
+visible = false
+
+[node name="stool" parent="." instance=ExtResource("16_ivpty")]
+transform = Transform3D(3.08131, -0.217426, 3.9317, 1.0352, 4.86149, -0.542447, -3.7992, 1.1483, 3.04097, 55.3955, 8.98146, -0.364383)
