@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=16 format=3 uid="uid://d1ktn5xkj85vs"]
+[gd_scene load_steps=15 format=3 uid="uid://d1ktn5xkj85vs"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_3qt84"]
 [ext_resource type="Texture2D" uid="uid://ccps6eip5dkan" path="res://art/ui/square_white_16x16.png" id="1_uvhe4"]
@@ -10,13 +9,10 @@
 [ext_resource type="Script" path="res://scripts/ui/button_reports_sibling_idx.gd" id="5_m1o63"]
 [ext_resource type="AudioStream" uid="uid://d2o8f3d8sdevq" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="7_03vpd"]
-
 [ext_resource type="Texture2D" uid="uid://djwrjjdfr55cb" path="res://art/imgs/a.png" id="7_ju5no"]
-[ext_resource type="FontFile" uid="uid://bb2gxtjhe8n76" path="res://theme/budnull/Budnm___.ttf" id="8_gl03p"]
 [ext_resource type="Texture2D" uid="uid://djjvuucvsnj0f" path="res://art/ui/ruler_pattern.png" id="8_qnu07"]
 [ext_resource type="Texture2D" uid="uid://brk55vyoa6s3g" path="res://art/ui/checkerboard_full.png" id="9_0il0o"]
 [ext_resource type="Texture2D" uid="uid://bvmrx4uscqtri" path="res://assets/coin.png" id="9_f27hl"]
-
 [ext_resource type="Texture2D" uid="uid://bvv1d0ttcih04" path="res://art/ui/star.png" id="9_fkqtd"]
 
 [node name="MainMenu" type="Node" node_paths=PackedStringArray("level_button_parent")]

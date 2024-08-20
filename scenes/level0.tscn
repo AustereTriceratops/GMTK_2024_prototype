@@ -1,7 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://byxfdpoedefbn"]
+[gd_scene load_steps=35 format=3 uid="uid://byxfdpoedefbn"]
 
 [ext_resource type="Material" uid="uid://c1mtn7nd63mdo" path="res://shaders/checkerboard_mat.tres" id="1_3njaf"]
-[ext_resource type="PackedScene" path="res://scenes/level_complete_collectable.tscn" id="1_msqcs"]
+[ext_resource type="PackedScene" uid="uid://brxyoamqb6n0q" path="res://scenes/level_complete_collectable.tscn" id="1_msqcs"]
 [ext_resource type="Texture2D" uid="uid://opq5r6wt7s8u" path="res://art/imgs/wood.png" id="1_vq61o"]
 [ext_resource type="Texture2D" uid="uid://cx7qkd7k2a4vm" path="res://art/imgs/woodblue.png" id="2_w42s6"]
 [ext_resource type="PackedScene" uid="uid://rxhnw21rvlnq" path="res://art/ablock.gltf" id="3_mbh24"]
@@ -24,14 +24,17 @@
 [sub_resource type="BoxMesh" id="BoxMesh_jsulv"]
 size = Vector3(15, 15, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_d6j17"]
-size = Vector3(15, 15, 0.2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_tslqv"]
+size = Vector3(5, 5, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os6ym"]
 albedo_texture = ExtResource("1_vq61o")
 
 [sub_resource type="BoxMesh" id="BoxMesh_fxpf6"]
-size = Vector3(7, 0.2, 0.2)
+size = Vector3(4, 0.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6j17"]
+size = Vector3(4, 0.2, 0.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qg4oy"]
 size = Vector3(1, 0.2, 0.2)
@@ -79,11 +82,15 @@ mesh = SubResource("BoxMesh_jsulv")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_d6j17")
+transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, -1.20139, -5.21541e-08)
+shape = SubResource("BoxShape3D_tslqv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, -1.20139, -0.033335)
+shape = SubResource("BoxShape3D_tslqv")
 
 [node name="LeftWall" type="StaticBody3D" parent="." groups=["level"]]
-transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, -61.1036, 7.56483, 0)
+transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, -61.1036, 47.0701, 0)
 collision_layer = 3
 
 [node name="level-mesh" type="MeshInstance3D" parent="LeftWall"]
@@ -163,7 +170,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42777, 3.16123, 0.48327)
 shape = SubResource("BoxShape3D_g25v5")
 
 [node name="RightWall" type="StaticBody3D" parent="." groups=["level"]]
-transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, 56.0731, 7.56483, 0)
+transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, 56.0731, 47.0701, 0)
 collision_layer = 3
 
 [node name="level-mesh" type="MeshInstance3D" parent="RightWall"]
@@ -173,7 +180,21 @@ mesh = SubResource("BoxMesh_fxpf6")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall"]
-transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0)
+transform = Transform3D(1, -1.06581e-14, 1.02994e-26, 1.06581e-14, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0.0595856, -4.76837e-07, 0)
+shape = SubResource("BoxShape3D_d6j17")
+
+[node name="RightWall2" type="StaticBody3D" parent="." groups=["level"]]
+transform = Transform3D(-1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 0, 0, 25, 59.6479, 47.0701, 0)
+collision_layer = 3
+
+[node name="level-mesh" type="MeshInstance3D" parent="RightWall2"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.55271e-15, 0, 3.55271e-15, 1, 0, -0.00520039, 0)
+material_override = SubResource("StandardMaterial3D_os6ym")
+mesh = SubResource("BoxMesh_fxpf6")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall2"]
+transform = Transform3D(1, -1.06581e-14, 1.02994e-26, 1.06581e-14, 1, -1.06581e-14, 0, 1.06581e-14, 1, 0.0595856, -4.76837e-07, 0)
 shape = SubResource("BoxShape3D_d6j17")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -23,6 +23,8 @@ func remove_all_levels():
 func on_level_select_idx_pressed(level_idx:int):
 	#print("Pushed button to change to level %s" % level_idx)
 	# Remove the current level
+	Globals.reset_player()
+	
 	_on_toggle_main_menu_button_pressed() 
 	
 	remove_all_levels()

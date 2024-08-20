@@ -15,10 +15,22 @@ signal current_level_complete(current_level:int)
 @export var PLAYER_MAX_SPEED = 20
 @export var PLAYER_STOP_SPEED = 0.1
 
-@export var level_complete = [false, true, false]
+@export var level_complete = [false, false, false]
 @export var current_level = 0
 
 var player
+
+func reset_player():
+	PLAYER_SCALE_LENGTH = 1.0
+	PLAYER_JUMP_SPEED = 5
+	PLAYER_DOUBLEJUMPIMPULSE = 30
+	PLAYER_ANGULARVELOCITY = 8.0
+	PLAYER_GRAVITY = 0.2
+	PLAYER_ACCELERATION = 5.0
+	PLAYER_ACCEL_MULTIPLIER = 1.0
+	PLAYER_SPEED = 10
+	PLAYER_MAX_SPEED = 20
+	PLAYER_STOP_SPEED = 0.1
 
 func set_player(current_player):
 	player = current_player
