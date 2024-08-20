@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1ktn5xkj85vs"]
+[gd_scene load_steps=16 format=3 uid="uid://d1ktn5xkj85vs"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_3qt84"]
 [ext_resource type="Texture2D" uid="uid://ccps6eip5dkan" path="res://art/ui/square_white_16x16.png" id="1_uvhe4"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://d2o8f3d8sdevq" path="res://audio/Scaling_Up_GMTK_2024_mournful_weird_uneasy.wav" id="6_r1gbk"]
 [ext_resource type="Script" path="res://scripts/audio/audio_manager.gd" id="7_03vpd"]
 [ext_resource type="Texture2D" uid="uid://djwrjjdfr55cb" path="res://art/imgs/a.png" id="7_ju5no"]
+[ext_resource type="FontFile" uid="uid://hhv5u3cwohgl" path="res://theme/budnull/Budnm___.ttf" id="8_gl03p"]
 [ext_resource type="Texture2D" uid="uid://djjvuucvsnj0f" path="res://art/ui/ruler_pattern.png" id="8_qnu07"]
 [ext_resource type="Texture2D" uid="uid://brk55vyoa6s3g" path="res://art/ui/checkerboard_full.png" id="9_0il0o"]
 [ext_resource type="Texture2D" uid="uid://bvmrx4uscqtri" path="res://assets/coin.png" id="9_f27hl"]
@@ -217,8 +218,11 @@ offset_right = 239.5
 offset_bottom = 300.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.929412, 0.231373, 0.258824, 1)
+theme_override_fonts/font = ExtResource("8_gl03p")
 theme_override_font_sizes/font_size = 176
 text = "I SAW"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="CanvasLayer/Control2"]
 layout_mode = 1
@@ -241,7 +245,7 @@ offset_left = -467.0
 offset_top = -164.0
 offset_right = 233.0
 offset_bottom = -64.0
-text = "I See A Tree"
+text = "Jacks Piled on Tiles"
 script = ExtResource("5_m1o63")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control2/Control/Button" groups=["level_complete"]]
@@ -259,11 +263,11 @@ texture = ExtResource("9_fkqtd")
 [node name="Button2" type="Button" parent="CanvasLayer/Control2/Control"]
 custom_minimum_size = Vector2(700, 150)
 layout_mode = 0
-offset_left = -314.0
-offset_top = 37.0
-offset_right = 386.0
-offset_bottom = 137.0
-text = "I Spot an Lock"
+offset_left = -354.0
+offset_top = 25.0
+offset_right = 346.0
+offset_bottom = 175.0
+text = "'A' Block Under Button Sky"
 script = ExtResource("5_m1o63")
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control2/Control/Button2" groups=["level_complete"]]
@@ -285,7 +289,7 @@ offset_left = -145.0
 offset_top = 216.0
 offset_right = 455.0
 offset_bottom = 316.0
-text = "I Sight a Kite"
+text = "Cards on the Branch"
 script = ExtResource("5_m1o63")
 
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer/Control2/Control/Button3" groups=["level_complete"]]
