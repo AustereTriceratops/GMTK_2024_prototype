@@ -206,19 +206,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_s731j")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control2/MarginContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-
 [node name="Label" type="Label" parent="CanvasLayer/Control2"]
 layout_mode = 1
 anchors_preset = 5
@@ -316,7 +303,7 @@ texture = ExtResource("9_fkqtd")
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 45.0
+offset_bottom = 50.0
 grow_horizontal = 2
 theme = ExtResource("1_ylit7")
 alignment = 1
@@ -362,6 +349,22 @@ theme = ExtResource("1_ylit7")
 toggle_mode = true
 text = "Music On/Off"
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ylit7")
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+text = "A, D to rotate               Space to jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="finished" from="CanvasLayer/AudioStreamPlayer" to="CanvasLayer/AudioStreamPlayer" method="_on_finished"]
 [connection signal="timeout" from="CanvasLayer/AudioStreamPlayer/UpdateAudioTimer" to="CanvasLayer/AudioStreamPlayer" method="_on_update_audio_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/ToggleMainMenuButton" to="." method="_on_toggle_main_menu_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/HBoxContainer/ToggleSoundButton" to="CanvasLayer/AudioStreamPlayer" method="_on_toggle_sound_button_toggled"]

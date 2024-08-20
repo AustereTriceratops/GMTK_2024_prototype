@@ -12,7 +12,10 @@ func _ready() -> void:
 	vol_slider.value_changed.connect(_on_volume_slider_value_changed)
 	
 func on_level_completed(level):
-	pass
+	Globals.PLAYER_SCALE_LENGTH = 1.0
+	pitch_scale = 1.0
+	$ExplosionSound.play()
+	$LevelCompleteSound.play()
 	
 func on_score_increment():
 	sfx_player.stream = score_increment_sfx
@@ -30,3 +33,7 @@ func _on_toggle_sound_button_toggled(toggled_on: bool) -> void:
 func _on_volume_slider_value_changed(value: float) -> void:
 	volume_db = value
 	sfx_player.volume_db = value
+
+
+func _on_finished() -> void:
+	play()

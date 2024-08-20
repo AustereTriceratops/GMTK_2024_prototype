@@ -9,11 +9,10 @@ func _ready() -> void:
 	Globals.current_level_complete.connect(on_level_complete)
 
 func on_level_complete(current_level):
+	print("level complete")
 	remove_all_levels()
 	showhide_menu.visible = true
 	update_star_completion()
-	$CanvasLayer/AudioStreamPlayer/ExplosionSound.play()
-	$CanvasLayer/AudioStreamPlayer/LevelCompleteSound.play()
 
 func remove_all_levels():
 	for child in get_children():
