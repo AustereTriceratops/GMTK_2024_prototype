@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://desvpjl8kieww"]
+[gd_scene load_steps=21 format=3 uid="uid://desvpjl8kieww"]
 
 [ext_resource type="Script" path="res://scripts/testScene.gd" id="1_brmjd"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="2_q4npd"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://r0tblu86crn1" path="res://art/domino.gltf" id="9_tbg1k"]
 [ext_resource type="PackedScene" uid="uid://bm5a8fxlacnys" path="res://art/jack.gltf" id="10_3h0bi"]
 [ext_resource type="PackedScene" uid="uid://c78y6bedxtfci" path="res://art/dice.gltf" id="11_rhsf8"]
+[ext_resource type="PackedScene" uid="uid://btvwxjn7ba7mo" path="res://art/busseat.gltf" id="14_g16nk"]
+[ext_resource type="PackedScene" uid="uid://bebkith8tk5w3" path="res://art/button.gltf" id="15_fu3og"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ge087"]
 size = Vector3(3, 0.1, 1)
@@ -21,12 +23,13 @@ size = Vector3(3, 0.1, 1)
 size = Vector3(3, 0.1, 2)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2bxpd"]
-rayleigh_coefficient = 1.15
-rayleigh_color = Color(0.186142, 0.407626, 0.686855, 1)
-mie_coefficient = 0.156
-mie_eccentricity = -0.13
+rayleigh_coefficient = 0.0
+rayleigh_color = Color(0.209963, 0.40511, 0.680942, 1)
+mie_coefficient = 0.116
+mie_eccentricity = -0.21
 mie_color = Color(0.981643, 0.891046, 0.686745, 1)
-turbidity = 116.9
+turbidity = 88.6
+sun_disk_scale = 14.58
 ground_color = Color(0.812658, 0.694774, 0.556755, 1)
 energy_multiplier = 0.5
 
@@ -34,12 +37,12 @@ energy_multiplier = 0.5
 sky_material = SubResource("PhysicalSkyMaterial_2bxpd")
 
 [sub_resource type="Environment" id="Environment_brng1"]
-background_mode = 2
-background_color = Color(0.925156, 0.807845, 0.663574, 1)
-background_energy_multiplier = 2.63
+background_mode = 1
+background_color = Color(0.0896014, 0.0652532, 0.237262, 1)
+background_energy_multiplier = 2.26
 sky = SubResource("Sky_v2ijr")
 ambient_light_source = 2
-ambient_light_color = Color(0.827516, 0.588107, 0.96313, 1)
+ambient_light_color = Color(0.810152, 0.646759, 0.740513, 1)
 ambient_light_energy = 0.11
 tonemap_mode = 3
 tonemap_exposure = 0.59
@@ -83,6 +86,7 @@ transform = Transform3D(14.035, 0, 0, 0, 14.035, 0, 0, 0, 14.035, -0.0135915, -0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_ge087")
@@ -229,3 +233,18 @@ transform = Transform3D(-21.7249, -12.3705, 5.40733e-07, 8.46086e-15, -1.09278e-
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_brng1")
+
+[node name="busseat" parent="." instance=ExtResource("14_g16nk")]
+transform = Transform3D(30.715, 0, 0, 0, 30.715, 0, 0, 0, 30.715, -0.160257, -0.975174, -24.1202)
+
+[node name="button" parent="." instance=ExtResource("15_fu3og")]
+transform = Transform3D(1.86, 0, 0, 0, -8.13032e-08, 1.86, 0, -1.86, -8.13032e-08, -2.12633, 15.2795, -39.9103)
+
+[node name="button2" parent="." instance=ExtResource("15_fu3og")]
+transform = Transform3D(1.315, 0, 0, 0, -5.74805e-08, 1.315, 0, -1.315, -5.74805e-08, -8.75848, 11.3459, -37.2295)
+
+[node name="button3" parent="." instance=ExtResource("15_fu3og")]
+transform = Transform3D(30.92, 0, 0, 0, -1.35156e-06, 30.92, 0, -30.92, -1.35156e-06, 28.1769, 20.413, -104.512)
+
+[node name="domino" parent="." instance=ExtResource("9_tbg1k")]
+transform = Transform3D(628.703, 1361.89, 0, -648.289, 299.277, 1319.15, 1197.69, -552.902, 714.035, -29.5108, 9.47424, -60.5907)
