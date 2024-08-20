@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dv5nbhhvh1y8i"]
 
 [ext_resource type="Script" path="res://scripts/coin.gd" id="1_2ye5f"]
-[ext_resource type="Texture2D" uid="uid://5g8prg58562q" path="res://art/ui/ruler_pattern.png" id="2_1x1ey"]
+[ext_resource type="Texture2D" uid="uid://djjvuucvsnj0f" path="res://art/ui/ruler_pattern.png" id="2_1x1ey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51nog"]
 albedo_texture = ExtResource("2_1x1ey")

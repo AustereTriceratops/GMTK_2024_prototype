@@ -1,9 +1,9 @@
 [gd_scene load_steps=33 format=3 uid="uid://byxfdpoedefbn"]
 
 [ext_resource type="Material" uid="uid://c1mtn7nd63mdo" path="res://shaders/checkerboard_mat.tres" id="1_3njaf"]
-[ext_resource type="Texture2D" uid="uid://d3qdnbqbe5nsy" path="res://art/imgs/wood.png" id="1_vq61o"]
+[ext_resource type="Texture2D" uid="uid://opq5r6wt7s8u" path="res://art/imgs/wood.png" id="1_vq61o"]
 [ext_resource type="Texture2D" uid="uid://cx7qkd7k2a4vm" path="res://art/imgs/woodblue.png" id="2_w42s6"]
-[ext_resource type="PackedScene" uid="uid://kst06sxfeqtg" path="res://art/ablock.gltf" id="3_mbh24"]
+[ext_resource type="PackedScene" uid="uid://rxhnw21rvlnq" path="res://art/ablock.gltf" id="3_mbh24"]
 [ext_resource type="PackedScene" uid="uid://capohcmau3xpv" path="res://scenes/playerScene.tscn" id="3_rvscj"]
 [ext_resource type="PackedScene" uid="uid://cq7dabss50oue" path="res://art/americaball.gltf" id="4_mouu1"]
 [ext_resource type="PackedScene" uid="uid://rvbujebl1p10" path="res://art/baseball.gltf" id="5_c4vx2"]
@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://ddi68palk0wee" path="res://art/measuringtape.gltf" id="10_6afpk"]
 [ext_resource type="PackedScene" uid="uid://b3gknrkh3o1n4" path="res://art/purpleball.gltf" id="11_u4btw"]
 [ext_resource type="PackedScene" uid="uid://17mdrbi5aikn" path="res://art/yellowball.gltf" id="12_4jniw"]
-[ext_resource type="PackedScene" uid="uid://ugir4146ei1v" path="res://art/woodenblock.gltf" id="13_foyqp"]
+[ext_resource type="PackedScene" uid="uid://d1cwh17asfrtw" path="res://art/woodenblock.gltf" id="13_foyqp"]
 [ext_resource type="PackedScene" uid="uid://dv5nbhhvh1y8i" path="res://scenes/coin.tscn" id="14_e3w3k"]
-[ext_resource type="PackedScene" uid="uid://dq4d128n4hkxk" path="res://art/woodenarch.gltf" id="15_ma11q"]
+[ext_resource type="PackedScene" uid="uid://b5fi1n5tarbxd" path="res://art/woodenarch.gltf" id="15_ma11q"]
 [ext_resource type="PlaneMesh" uid="uid://ktvpd5awbq2h" path="res://shaders/material_graphpaper.tres" id="19_s3t55"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jsulv"]
