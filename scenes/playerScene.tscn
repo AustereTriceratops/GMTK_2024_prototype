@@ -79,6 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 0.990983, 0.133986, 0, -0.133986, 0.990983, 
 attributes = SubResource("CameraAttributesPractical_qf0ym")
 h_offset = 0.01
 v_offset = 0.71
+fov = 55.0
 script = ExtResource("2_epny7")
 
 [node name="OmniLight3D" type="DirectionalLight3D" parent="Camera"]
