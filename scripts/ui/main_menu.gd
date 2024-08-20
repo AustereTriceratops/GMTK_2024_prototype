@@ -30,7 +30,7 @@ func on_level_select_idx_pressed(level_idx:int):
 		0:
 			next_level_resource = preload("res://scenes/level0.tscn").instantiate()
 		1:
-			next_level_resource = preload("res://scenes/artonlylevel.tscn").instantiate()
+			next_level_resource = preload("res://scenes/levels/level_1.tscn").instantiate()
 		2:
 			next_level_resource = preload("res://scenes/level2.tscn").instantiate()
 		_:
