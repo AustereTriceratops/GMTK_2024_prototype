@@ -66,8 +66,6 @@ flip_h = true
 
 [node name="BackgroundDecor" type="Control" parent="CanvasLayer/Control2"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control2/BackgroundDecor"]
 layout_mode = 0
@@ -119,8 +117,10 @@ texture = ExtResource("9_0il0o")
 
 [node name="circles" type="Control" parent="CanvasLayer/Control2/BackgroundDecor"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -6.0
+offset_top = -64.0
+offset_right = 34.0
+offset_bottom = -24.0
 
 [node name="TextureRect5" type="TextureRect" parent="CanvasLayer/Control2/BackgroundDecor/circles"]
 layout_mode = 0
@@ -244,8 +244,8 @@ layout_mode = 0
 offset_left = -467.0
 offset_top = -164.0
 offset_right = 233.0
-offset_bottom = -64.0
-text = "Jacks Piled on Tiles"
+offset_bottom = -14.0
+text = "Jacks Piles on Tiles"
 script = ExtResource("5_m1o63")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control2/Control/Button" groups=["level_complete"]]
