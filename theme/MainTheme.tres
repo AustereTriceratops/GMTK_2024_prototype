@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://fbhhd35pioar"]
 
 [ext_resource type="FontFile" uid="uid://b58piq00q6tq1" path="res://theme/klarissa/Klarissa.ttf" id="1_1rs0y"]
-[ext_resource type="Texture2D" uid="uid://cdxpddtuhktrc" path="res://art/a.png" id="1_jvo2l"]
-[ext_resource type="Texture2D" uid="uid://dky1cup7gdnaa" path="res://art/imgs/a.png" id="2_38bho"]
+[ext_resource type="Texture2D" uid="uid://c0705ed6tv6mc" path="res://art/a.png" id="1_jvo2l"]
+[ext_resource type="Texture2D" uid="uid://djwrjjdfr55cb" path="res://art/imgs/a.png" id="2_38bho"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rka5"]
 bg_color = Color(0.0627451, 0.262745, 0.458824, 1)

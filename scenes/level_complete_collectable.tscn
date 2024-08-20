@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level_complete_collectable.gd" id="1_hjdeu"]
 [ext_resource type="Script" path="res://scripts/EmitOnVisible.gd" id="2_ujpyn"]
 [ext_resource type="ArrayMesh" uid="uid://dtv8comc4hgag" path="res://art/meshes/jack_mesh.tres" id="3_i3h01"]
-[ext_resource type="AudioStream" uid="uid://g76epf7wtwkv" path="res://audio/sfx/ascending_do-do-do.wav" id="4_v7dne"]
+[ext_resource type="AudioStream" uid="uid://dsdxmqb7npcah" path="res://audio/sfx/ascending_do-do-do.wav" id="4_v7dne"]
 
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_omjou"]
 
